@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - Mobile Banner Ad</title>
+  <!--
+    ============================================================
+    EDITABLE GOOGLE ADS BANNER - Mobile Leaderboard
+    Size: 320 x 50px
+    ============================================================
+  -->
+  <style>
+    @import url('../shared/brand-colors.css');
+
+    .poster {
+      width: 320px;
+      height: 50px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 40px;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--gradient-logo);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 13px; height: 13px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .headline .accent { color: var(--logo-start); }
+
+    .sub {
+      font-size: 0.6rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      background: var(--gradient-logo);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 5px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path d="M50 27 L68 43 L59 43 L59 73 L41 73 L41 43 L32 43 Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-name">Bizz<span>Auto</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="text">
+      <!-- EDIT: Headline -->
+      <div class="headline">BizzAuto CRM | <span class="accent">Try Free</span></div>
+      <!-- EDIT: Sub text -->
+      <div class="sub">WhatsApp + AI + E-Commerce — ₹0/month plan</div>
+    </div>
+    <!-- EDIT: CTA -->
+    <a href="#" class="cta">Get App →</a>
+  </div>
+</body>
+</html>

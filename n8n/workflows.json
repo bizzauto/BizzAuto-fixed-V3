@@ -1,0 +1,436 @@
+[
+  {
+    "name": "WhatsApp Auto-Reply with AI",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "whatsapp-incoming",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300],
+        "webhookId": "whatsapp-auto-reply"
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{$json.body.entry[0].changes[0].value.messages[0].type}}",
+                "value2": "text"
+              }
+            ]
+          }
+        },
+        "name": "Check Message Type",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.N8N_OPENROUTER_KEY}}"
+              },
+              {
+                "name": "HTTP-Referer",
+                "value": "={{$env.N8N_APP_URL}}"
+              },
+              {
+                "name": "X-Title",
+                "value": "BizzAuto AI Reply"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"google/gemma-2-9b-it:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful customer service assistant. Reply politely in maximum 2 sentences. If the message is a greeting, respond warmly. If it's a question, provide a helpful brief answer. Use emojis naturally.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"={{$json.body.entry[0].changes[0].value.messages[0].text.body}}\"\n    }\n  ],\n  \"max_tokens\": 200\n}"
+        },
+        "name": "AI Generate Reply",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 200]
+      },
+      {
+        "parameters": {
+          "url": "https://graph.facebook.com/v18.0/{{$env.WHATSAPP_PHONE_NUMBER_ID}}/messages",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.WHATSAPP_ACCESS_TOKEN}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"={{$json.body.entry[0].changes[0].value.messages[0].from}}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"={{$json.choices[0].message.content}}\"\n  }\n}"
+        },
+        "name": "Send WhatsApp Reply",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [910, 200]
+      }
+    ],
+    "connections": {
+      "Webhook": {
+        "main": [[{ "node": "Check Message Type", "type": "main", "index": 0 }]]
+      },
+      "Check Message Type": {
+        "main": [[{ "node": "AI Generate Reply", "type": "main", "index": 0 }]]
+      },
+      "AI Generate Reply": {
+        "main": [[{ "node": "Send WhatsApp Reply", "type": "main", "index": 0 }]]
+      }
+    },
+    "settings": {
+      "saveExecutionProgress": true,
+      "saveManualExecutions": true,
+      "saveDataErrorExecution": "all",
+      "saveDataSuccessExecution": "all"
+    },
+    "tags": ["whatsapp", "auto-reply", "ai"]
+  },
+  {
+    "name": "Lead Auto-Capture from IndiaMART",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "indiamart-lead",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "IndiaMART Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300]
+      },
+      {
+        "parameters": {
+          "url": "={{$env.N8N_APP_URL || 'http://app:4000'}}/api/leads/indiamart/{{$json.businessId}}",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "x-n8n-api-key",
+                "value": "={{$env.N8N_API_KEY}}"
+              },
+              {
+                "name": "x-business-id",
+                "value": "={{$json.businessId}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"name\": \"={{$json.name}}\",\n  \"phone\": \"={{$json.phone}}\",\n  \"email\": \"={{$json.email}}\",\n  \"product\": \"={{$json.product}}\",\n  \"requirement\": \"={{$json.requirement}}\"\n}"
+        },
+        "name": "Save to CRM",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "url": "={{$env.N8N_APP_URL || 'http://app:4000'}}/api/whatsapp/send/text",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "x-n8n-api-key",
+                "value": "={{$env.N8N_API_KEY}}"
+              },
+              {
+                "name": "x-business-id",
+                "value": "={{$json.data.businessId}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"contactId\": \"={{$json.data.id}}\",\n  \"content\": \"Hello {{$json.data.name}}! \ud83d\udc4b\n\nThank you for your inquiry! We've received your details and our team will get back to you shortly.\n\nBest regards,\nYour Business Team\"\n}"
+        },
+        "name": "Send Welcome WhatsApp via App",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 300]
+      }
+    ],
+    "connections": {
+      "IndiaMART Webhook": {
+        "main": [[{ "node": "Save to CRM", "type": "main", "index": 0 }]]
+      },
+      "Save to CRM": {
+        "main": [[{ "node": "Send Welcome WhatsApp via App", "type": "main", "index": 0 }]]
+      }
+    },
+    "tags": ["leads", "indiamart", "auto-reply"]
+  },
+  {
+    "name": "Google Review Auto-Reply",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "new-review",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "Review Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "number": [
+              {
+                "value1": "={{$json.rating}}",
+                "operation": "largerEqual",
+                "value2": 4
+              }
+            ]
+          }
+        },
+        "name": "Check Rating",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.N8N_OPENROUTER_KEY}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"google/gemma-2-9b-it:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Write a thank you message for a {{$json.rating}}-star review. Keep it under 100 characters. Be warm and professional.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Generate thank you reply for this review\"\n    }\n  ],\n  \"max_tokens\": 150\n}"
+        },
+        "name": "AI Thank You",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 200]
+      },
+      {
+        "parameters": {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.N8N_OPENROUTER_KEY}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"google/gemma-2-9b-it:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Write an apology and ask for a chance to improve. Keep it under 100 characters. Be professional and caring.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Generate apology for this negative review\"\n    }\n  ],\n  \"max_tokens\": 150\n}"
+        },
+        "name": "AI Apology",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 400]
+      },
+      {
+        "parameters": {
+          "url": "={{$env.N8N_APP_URL || 'http://app:4000'}}/api/reviews/{{$json.reviewId}}/reply",
+          "method": "PUT",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "x-n8n-api-key",
+                "value": "={{$env.N8N_API_KEY}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"replyText\": \"={{$json.choices[0].message.content}}\"\n}"
+        },
+        "name": "Post Reply",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [910, 300]
+      }
+    ],
+    "connections": {
+      "Review Webhook": {
+        "main": [[{ "node": "Check Rating", "type": "main", "index": 0 }]]
+      },
+      "Check Rating": {
+        "main": [
+          [{ "node": "AI Thank You", "type": "main", "index": 0 }],
+          [{ "node": "AI Apology", "type": "main", "index": 0 }]
+        ]
+      },
+      "AI Thank You": {
+        "main": [[{ "node": "Post Reply", "type": "main", "index": 0 }]]
+      },
+      "AI Apology": {
+        "main": [[{ "node": "Post Reply", "type": "main", "index": 0 }]]
+      }
+    },
+    "tags": ["reviews", "google", "auto-reply"]
+  },
+  {
+    "name": "Ava Executive Assistant - Business Intelligence",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "ava-command",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "Ava Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300],
+        "webhookId": "ava-executive"
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{$json.body.command}}",
+                "value2": "briefing"
+              }
+            ]
+          }
+        },
+        "name": "Check Command Type",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "url": "={{$env.N8N_APP_URL || 'http://app:4000'}}/api/ava/briefing",
+          "method": "GET",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.N8N_AVA_TOKEN}}"
+              },
+              {
+                "name": "x-business-id",
+                "value": "={{$json.body.businessId}}"
+              }
+            ]
+          }
+        },
+        "name": "Get Business Briefing",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 200]
+      },
+      {
+        "parameters": {
+          "url": "https://integrate.api.nvidia.com/v1/chat/completions",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.NVIDIA_NIM_API_KEY}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"meta/llama-3.3-70b-instruct\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are Ava, an elite AI Executive Assistant. Provide a concise executive briefing based on the business data. Be professional, use numbers, and give actionable recommendations. Keep response under 300 words.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Generate executive briefing from this data: {{JSON.stringify($json.data)}}\"\n    }\n  ],\n  \"max_tokens\": 500,\n  \"temperature\": 0.7\n}"
+        },
+        "name": "AI Generate Briefing",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [910, 200]
+      },
+      {
+        "parameters": {
+          "url": "https://integrate.api.nvidia.com/v1/chat/completions",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{$env.NVIDIA_NIM_API_KEY}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"meta/llama-3.3-70b-instruct\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are Ava, an elite AI Executive Assistant for a business platform. Respond to the user's command professionally. Be concise and actionable.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"{{$json.body.command}}\"\n    }\n  ],\n  \"max_tokens\": 300,\n  \"temperature\": 0.7\n}"
+        },
+        "name": "AI Process Command",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 400]
+      },
+      {
+        "parameters": {
+          "respondWith": "json",
+          "responseBody": "={\n  \"success\": true,\n  \"data\": {\n    \"text\": \"={{$json.choices[0].message.content}}\",\n    \"model\": \"ava-n8n\",\n    \"timestamp\": \"{{DateTime.now().toISO()}}\"\n  }\n}"
+        },
+        "name": "Send Response",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1,
+        "position": [1130, 300]
+      }
+    ],
+    "connections": {
+      "Ava Webhook": {
+        "main": [[{ "node": "Check Command Type", "type": "main", "index": 0 }]]
+      },
+      "Check Command Type": {
+        "main": [
+          [{ "node": "Get Business Briefing", "type": "main", "index": 0 }],
+          [{ "node": "AI Process Command", "type": "main", "index": 0 }]
+        ]
+      },
+      "Get Business Briefing": {
+        "main": [[{ "node": "AI Generate Briefing", "type": "main", "index": 0 }]]
+      },
+      "AI Generate Briefing": {
+        "main": [[{ "node": "Send Response", "type": "main", "index": 0 }]]
+      },
+      "AI Process Command": {
+        "main": [[{ "node": "Send Response", "type": "main", "index": 0 }]]
+      }
+    },
+    "settings": {
+      "saveExecutionProgress": true,
+      "saveManualExecutions": true,
+      "saveDataErrorExecution": "all",
+      "saveDataSuccessExecution": "all"
+    },
+    "tags": ["ava", "executive", "business-intelligence"]
+  }
+]

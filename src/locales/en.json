@@ -1,0 +1,148 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "close": "Close",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "phone": "Phone",
+    "loginButton": "Sign In",
+    "registerButton": "Sign Up",
+    "demoLogin": "Try Demo",
+    "welcomeBack": "Welcome Back!",
+    "createAccount": "Create Account"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "crm": "CRM",
+    "whatsapp": "WhatsApp",
+    "ecommerce": "E-Commerce",
+    "appointments": "Appointments",
+    "automation": "Automation",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "todaysLeads": "Today's Leads",
+    "messagesSent": "Messages Sent",
+    "revenue": "Revenue",
+    "tasks": "Tasks",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions"
+  },
+  "crm": {
+    "contacts": "Contacts",
+    "deals": "Deals",
+    "invoices": "Invoices",
+    "appointments": "Appointments",
+    "addContact": "Add Contact",
+    "editContact": "Edit Contact",
+    "deleteContact": "Delete Contact",
+    "stage": "Stage",
+    "dealValue": "Deal Value",
+    "leadScore": "Lead Score",
+    "notes": "Notes",
+    "activities": "Activities",
+    "tasks": "Tasks"
+  },
+  "ecommerce": {
+    "products": "Products",
+    "orders": "Orders",
+    "coupons": "Coupons",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "price": "Price",
+    "stock": "Stock",
+    "category": "Category",
+    "variants": "Variants",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "orderPlaced": "Order Placed",
+    "orderShipped": "Order Shipped",
+    "orderDelivered": "Order Delivered"
+  },
+  "whatsapp": {
+    "messages": "Messages",
+    "templates": "Templates",
+    "broadcasts": "Broadcasts",
+    "newMessage": "New Message",
+    "send": "Send",
+    "typing": "typing...",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "login": {
+    "title": "BizzAuto Solutions",
+    "subtitle": "Platform Automation",
+    "heroTitle": "Automate Your Business Growth",
+    "emailPlaceholder": "Email Address",
+    "passwordPlaceholder": "Password",
+    "signIn": "Sign In",
+    "verify": "Verification",
+    "verifyBtn": "Verify"
+  },
+  "common": {
+    "loading": "Loading..."
+  }
+  "settings": {
+    "general": "General",
+    "business": "Business",
+    "notifications": "Notifications",
+    "security": "Security",
+    "billing": "Billing",
+    "team": "Team",
+    "integrations": "Integrations",
+    "language": "Language",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "saveChanges": "Save Changes"
+  },
+  "billing": {
+    "plan": "Plan",
+    "currentPlan": "Current Plan",
+    "upgrade": "Upgrade",
+    "billingHistory": "Billing History",
+    "paymentMethod": "Payment Method",
+    "invoice": "Invoice",
+    "amount": "Amount",
+    "date": "Date",
+    "status": "Status"
+  },
+  "errors": {
+    "notFound": "Page Not Found",
+    "serverError": "Server Error",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "networkError": "Network Error",
+    "tryAgain": "Try Again"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "5.22.0",
+  "steps": [
+    {
+      "tag": "CreateEnum",
+      "enum": "LandingPageStatus",
+      "values": ["DRAFT", "PUBLISHED"]
+    },
+    {
+      "tag": "CreateEnum",
+      "enum": "Role",
+      "values": ["SUPER_ADMIN", "OWNER", "ADMIN", "MEMBER", "VIEWER"]
+    },
+    {
+      "tag": "CreateEnum",
+      "enum": "Plan",
+      "values": ["FREE", "BASIC", "STARTER", "GROWTH", "PROFESSIONAL", "PRO", "ENTERPRISE", "AGENCY"]
+    },
+    {
+      "tag": "CreateEnum",
+      "enum": "LedgerType",
+      "values": ["INCOME", "EXPENSE"]
+    },
+    {
+      "tag": "CreateEnum",
+      "enum": "PaymentMethod",
+      "values": ["CASH", "BANK", "UPI", "CARD"]
+    },
+    {
+      "tag": "CreateEnum",
+      "enum": "CouponType",
+      "values": ["PERCENTAGE", "FIXED"]
+    }
+  ],
+  "datamodel": "from prisma/schema.prisma",
+  "datasource": "postgresql",
+  "MigrationId": "20260624_init",
+  "startedAt": "2026-06-24T12:00:00.000Z",
+  "finishedAt": "2026-06-24T12:00:10.000Z"
+}

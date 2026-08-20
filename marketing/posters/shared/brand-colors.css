@@ -1,0 +1,67 @@
+/* ============================================================
+   BizzAuto CRM - Brand Colors & CSS Variables
+   ============================================================
+   EDIT THESE VALUES TO CHANGE BRANDING ACROSS ALL POSTERS
+   ============================================================ */
+
+:root {
+  /* === LOGO COLORS === */
+  --logo-start: #0D9488;        /* Teal gradient start */
+  --logo-end: #14B8A6;          /* Teal gradient end */
+
+  /* === PRIMARY PALETTE === */
+  --primary: #6366f1;           /* Indigo 500 */
+  --primary-dark: #4f46e5;      /* Indigo 600 */
+  --primary-light: #818cf8;     /* Indigo 400 */
+
+  /* === SECONDARY PALETTE === */
+  --secondary: #8b5cf6;         /* Violet 500 */
+  --secondary-dark: #7c3aed;    /* Violet 600 */
+  --secondary-light: #a78bfa;   /* Violet 400 */
+
+  /* === ACCENT === */
+  --accent: #ec4899;            /* Pink 500 */
+  --accent-dark: #db2777;       /* Pink 600 */
+  --accent-light: #f472b6;      /* Pink 400 */
+
+  /* === STATUS COLORS === */
+  --success: #22c55e;           /* Green 500 */
+  --warning: #f59e0b;           /* Amber 500 */
+  --error: #ef4444;             /* Red 500 */
+  --info: #06b6d4;              /* Cyan 500 */
+
+  /* === DARK THEME BACKGROUNDS === */
+  --bg-primary: #0f172a;        /* Slate 900 - Main background */
+  --bg-secondary: #1e293b;      /* Slate 800 - Card background */
+  --bg-tertiary: #334155;       /* Slate 700 - Hover/elevated */
+
+  /* === TEXT COLORS === */
+  --text-primary: #f8fafc;      /* Slate 50 - Main text */
+  --text-secondary: #94a3b8;    /* Slate 400 - Muted text */
+  --text-muted: #64748b;        /* Slate 500 - Subtle text */
+
+  /* === BORDERS === */
+  --border: #334155;            /* Slate 700 */
+  --border-light: #475569;      /* Slate 600 */
+
+  /* === GRADIENTS === */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+  --gradient-accent: linear-gradient(135deg, var(--accent), var(--secondary));
+  --gradient-logo: linear-gradient(135deg, var(--logo-start), var(--logo-end));
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+
+  /* === GLOW EFFECTS === */
+  --glow-primary: 0 0 20px rgba(99, 102, 241, 0.4);
+  --glow-accent: 0 0 20px rgba(236, 72, 153, 0.4);
+  --glow-logo: 0 0 20px rgba(13, 148, 136, 0.4);
+
+  /* === TYPOGRAPHY === */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+
+  /* === SPACING === */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}

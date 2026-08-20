@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - E-Commerce Poster</title>
+  <!--
+    ============================================================
+    EDITABLE MARKETING POSTER - E-Commerce
+    Size: 1080 x 1350px (Instagram/Facebook Portrait)
+    ============================================================
+  -->
+  <style>
+    @import url('shared/brand-colors.css');
+    @import url('shared/base-styles.css');
+
+    .poster {
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: 150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      bottom: 100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-logo);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(13, 148, 136, 0.4);
+    }
+
+    .logo-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .logo-name span {
+      color: var(--logo-start);
+    }
+
+    .badge-store {
+      padding: 8px 20px;
+      background: rgba(236, 72, 153, 0.12);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+      border-radius: 100px;
+      color: var(--accent-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(13, 148, 136, 0.12);
+      border: 1px solid rgba(13, 148, 136, 0.25);
+      border-radius: 100px;
+      color: var(--logo-end);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .headline .gradient-text {
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    /* === STORE MOCKUP === */
+    .store-mockup {
+      display: flex;
+      gap: 24px;
+    }
+
+    .store-phone {
+      width: 300px;
+      flex-shrink: 0;
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 12px;
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 24px;
+      background: var(--bg-primary);
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto 16px;
+    }
+
+    .phone-screen {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .phone-header {
+      padding: 16px;
+      background: var(--gradient-logo);
+      text-align: center;
+    }
+
+    .phone-header-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .phone-products {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .product-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .product-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .product-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .product-price-old {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-left: 4px;
+    }
+
+    /* === FEATURES GRID === */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .icon-teal {
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+    }
+
+    .icon-purple {
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .icon-pink {
+      background: rgba(236, 72, 153, 0.15);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+    }
+
+    .icon-green {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .feature-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .feature-text p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: var(--gradient-logo);
+      color: white;
+      font-family: var(--font-primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(13, 148, 136, 0.35);
+    }
+
+    .url {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .url span {
+      color: var(--logo-start);
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="grid-bg"></div>
+
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 25 L70 45 L60 45 L60 75 L40 75 L40 45 L30 45 Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+      <div class="badge-store">🛒 E-Commerce</div>
+    </div>
+
+    <div class="content">
+      <div>
+        <div class="eyebrow">
+          <span>🛍️</span>
+          Online Store Builder
+        </div>
+
+        <h1 class="headline">
+          Your Online Store in <span class="gradient-text">5 Minutes</span>
+        </h1>
+
+        <p class="subheadline">
+          Launch your e-commerce store with UPI, Razorpay payments, inventory management & WhatsApp orders — no coding required.
+        </p>
+      </div>
+
+      <div class="store-mockup">
+        <!-- Phone Mockup -->
+        <div class="store-phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <!-- EDIT: Store name -->
+              <div class="phone-header-title">🛍️ BizzAuto Store</div>
+            </div>
+            <div class="phone-products">
+              <!-- EDIT: Product cards -->
+              <div class="product-card">
+                <div class="product-img">👟</div>
+                <div class="product-name">Premium Sneakers</div>
+                <div class="product-price">₹1,999 <span class="product-price-old">₹3,999</span></div>
+              </div>
+              <div class="product-card">
+                <div class="product-img">👜</div>
+                <div class="product-name">Designer Bag</div>
+                <div class="product-price">₹2,499 <span class="product-price-old">₹4,999</span></div>
+              </div>
+              <div class="product-card">
+                <div class="product-img">⌚</div>
+                <div class="product-name">Smart Watch</div>
+                <div class="product-price">₹3,999 <span class="product-price-old">₹7,999</span></div>
+              </div>
+              <div class="product-card">
+                <div class="product-img">🎧</div>
+                <div class="product-name">Wireless Earbuds</div>
+                <div class="product-price">₹999 <span class="product-price-old">₹2,499</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box icon-teal">💳</div>
+            <div class="feature-text">
+              <!-- EDIT: Feature title & desc -->
+              <h4>UPI & Razorpay</h4>
+              <p>Accept payments via UPI, cards, net banking & wallets</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box icon-purple">📦</div>
+            <div class="feature-text">
+              <h4>Inventory Management</h4>
+              <p>Track stock, low alerts & automated restocking</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box icon-pink">🚚</div>
+            <div class="feature-text">
+              <h4>Shipping Rules</h4>
+              <p>Pincode-based shipping for all Indian states</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box icon-green">💬</div>
+            <div class="feature-text">
+              <h4>WhatsApp Orders</h4>
+              <p>Orders via WhatsApp chatbot with auto-confirm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="#" class="cta-btn">Launch Your Store →</a>
+      <div class="url">bizz<span>auto</span>ai.com</div>
+    </div>
+  </div>
+</body>
+</html>

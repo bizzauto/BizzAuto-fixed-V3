@@ -1,0 +1,80 @@
+// White-Label Reseller System — Prisma Schema
+// Uses separate PostgreSQL schema (wl_schema) to NEVER conflict with BizzAuto's public schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["public", "wl_schema"]
+}
+
+// ==================== RESELLERS ====================
+
+model WlReseller {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  password     String   // bcrypt hashed
+  company      String
+  phone        String?
+  plan         String   @default("STARTER") // STARTER, PRO, ENTERPRISE
+  domain       String?
+  logo         String?
+  primaryColor String   @default("#6366f1")
+  isActive     Boolean  @default(true)
+  revenue      Float    @default(0)
+  joinedAt     DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  clients     WlClient[]
+  brandingLog WlBrandingLog[]
+
+  @@map("wl_resellers")
+  @@schema("wl_schema")
+}
+
+// ==================== RESELLER CLIENTS (end customers) ====================
+
+model WlClient {
+  id         String   @id @default(cuid())
+  resellerId String
+  reseller   WlReseller @relation(fields: [resellerId], references: [id], onDelete: Cascade)
+
+  name    String
+  email   String
+  phone   String?
+  product String   @default("google-reviews") // google-reviews, digital-vcard, website-builder
+  status  String   @default("pending") // pending, active, suspended
+  plan    String   @default("STARTER")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([resellerId])
+  @@index([email])
+  @@map("wl_clients")
+  @@schema("wl_schema")
+}
+
+// ==================== BRANDING CHANGE LOG ====================
+
+model WlBrandingLog {
+  id         String   @id @default(cuid())
+  resellerId String
+  reseller   WlReseller @relation(fields: [resellerId], references: [id], onDelete: Cascade)
+
+  field String // company, domain, logo, primaryColor
+  oldValue String?
+  newValue String?
+
+  createdAt DateTime @default(now())
+
+  @@index([resellerId])
+  @@map("wl_branding_logs")
+  @@schema("wl_schema")
+}

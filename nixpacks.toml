@@ -1,0 +1,24 @@
+# Nixpacks Configuration for Coolify
+# https://coolify.io/docs
+
+[phases.setup]
+nixpacks = "nodejs_20"
+
+[phases.install]
+npmInstall = true
+
+[phases.build]
+cmds = [
+    "npm run build"
+]
+
+[start]
+cmd = "npx prisma generate && node dist/server/index.js"
+
+[variables]
+NODE_ENV = "production"
+PORT = "4000"
+
+[engines]
+node = "20"
+npm = "10"

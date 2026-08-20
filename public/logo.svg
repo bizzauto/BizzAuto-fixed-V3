@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#f0f4ff"/>
+  
+  <!-- Bar Chart -->
+  <rect x="70" y="190" width="50" height="110" rx="4" fill="#7ec8e3"/>
+  <rect x="135" y="155" width="50" height="145" rx="4" fill="#4db8d9"/>
+  <rect x="200" y="120" width="50" height="180" rx="4" fill="#1a7fb5"/>
+  <rect x="265" y="85" width="50" height="215" rx="4" fill="#0d3b66"/>
+  
+  <!-- Trend Arrow -->
+  <path d="M95 200 L160 165 L225 135 L310 70" stroke="#0d3b66" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="300,55 320,68 305,80" fill="#0d3b66"/>
+  
+  <!-- Cloud -->
+  <ellipse cx="110" cy="310" rx="55" ry="30" fill="#7ec8e3" opacity="0.8"/>
+  <ellipse cx="180" cy="300" rx="70" ry="40" fill="#7ec8e3" opacity="0.9"/>
+  <ellipse cx="260" cy="310" rx="60" ry="32" fill="#7ec8e3" opacity="0.8"/>
+  <ellipse cx="150" cy="315" rx="50" ry="28" fill="#a8dce8" opacity="0.7"/>
+  <ellipse cx="230" cy="318" rx="55" ry="26" fill="#a8dce8" opacity="0.7"/>
+  
+  <!-- 10X Text -->
+  <text x="320" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#0d3b66">10X</text>
+  
+  <!-- BizzAuto Ai Text -->
+  <text x="200" y="380" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#0d3b66" text-anchor="middle">BizzAuto Ai</text>
+</svg>

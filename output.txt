@@ -1,0 +1,921 @@
+src/AppWrapper.tsx(83,7): error TS6133: 'SalesAnalyticsPage' is declared but its value is never read.
+src/AppWrapper.tsx(95,7): error TS6133: 'ReportsPage' is declared but its value is never read.
+src/components/ABTestingPage.tsx(3,30): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/ABTestingPage.tsx(3,42): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/ABTestingPage.tsx(3,67): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/ABTestingPage.tsx(3,80): error TS6133: 'Loader2' is declared but its value is never read.
+src/components/ABTestingPage.tsx(17,9): error TS6133: 'toast' is declared but its value is never read.
+src/components/AdmissionForm.tsx(4,9): error TS6133: 'Mail' is declared but its value is never read.
+src/components/AdmissionForm.tsx(4,15): error TS6133: 'Phone' is declared but its value is never read.
+src/components/AdmissionForm.tsx(4,33): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/AdmissionForm.tsx(4,41): error TS6133: 'Globe' is declared but its value is never read.
+src/components/AdmissionForm.tsx(5,46): error TS6133: 'Users' is declared but its value is never read.
+src/components/AdmissionForm.tsx(6,23): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(3,49): error TS6133: 'Image' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(5,32): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(5,45): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(6,30): error TS6133: 'CreditCard' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(7,46): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(8,3): error TS6133: 'Copy' is declared but its value is never read.
+src/components/AgencyDashboard.tsx(191,9): error TS6133: 'user' is declared but its value is never read.
+src/components/AIContentSchedulerPage.tsx(5,43): error TS6133: 'Edit' is declared but its value is never read.
+src/components/AIContentSchedulerPage.tsx(6,43): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/AIGenerationModal.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/AIGenerationModal.tsx(4,16): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/AISalesAssistantPage.tsx(6,3): error TS6133: 'ArrowUpRight' is declared but its value is never read.
+src/components/AISalesAssistantPage.tsx(27,9): error TS6133: 'toast' is declared but its value is never read.
+src/components/AppointmentBookingPage.tsx(2,20): error TS6133: 'Clock' is declared but its value is never read.
+src/components/AppointmentBookingPage.tsx(2,27): error TS6133: 'User' is declared but its value is never read.
+src/components/AppointmentBookingPage.tsx(2,33): error TS6133: 'Phone' is declared but its value is never read.
+src/components/AppointmentBookingPage.tsx(2,40): error TS6133: 'Mail' is declared but its value is never read.
+src/components/AppointmentsPage.tsx(4,34): error TS6133: 'Mail' is declared but its value is never read.
+src/components/AppointmentsPage.tsx(4,40): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/components/AppointmentsPage.tsx(421,55): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(467,56): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(469,38): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(539,27): error TS2345: Argument of type '(prev: Service[]) => (Service | { id: string; name: string; description: string; duration: number; price: number; color: string | undefined; active: true; })[]' is not assignable to parameter of type 'SetStateAction<Service[]>'.
+  Type '(prev: Service[]) => (Service | { id: string; name: string; description: string; duration: number; price: number; color: string | undefined; active: true; })[]' is not assignable to type '(prevState: Service[]) => Service[]'.
+    Type '(Service | { id: string; name: string; description: string; duration: number; price: number; color: string | undefined; active: true; })[]' is not assignable to type 'Service[]'.
+      Type 'Service | { id: string; name: string; description: string; duration: number; price: number; color: string | undefined; active: true; }' is not assignable to type 'Service'.
+        Type '{ id: string; name: string; description: string; duration: number; price: number; color: string | undefined; active: true; }' is not assignable to type 'Service'.
+          Types of property 'color' are incompatible.
+            Type 'string | undefined' is not assignable to type 'string'.
+              Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(554,21): error TS2322: Type '{ color: string; id?: string | undefined; name?: string | undefined; description?: string | undefined; duration?: number | undefined; price?: number | undefined; active?: boolean | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(560,23): error TS2322: Type '{ name: string; id?: string | undefined; description?: string | undefined; duration?: number | undefined; price?: number | undefined; color?: string | undefined; active?: boolean | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(565,23): error TS2322: Type '{ description: string; id?: string | undefined; name?: string | undefined; duration?: number | undefined; price?: number | undefined; color?: string | undefined; active?: boolean | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(575,23): error TS2322: Type '{ duration: number; id?: string | undefined; name?: string | undefined; description?: string | undefined; price?: number | undefined; color?: string | undefined; active?: boolean | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(583,23): error TS2322: Type '{ price: number; id?: string | undefined; name?: string | undefined; description?: string | undefined; duration?: number | undefined; color?: string | undefined; active?: boolean | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(589,21): error TS2322: Type '{ active: boolean; id?: string | undefined; name?: string | undefined; description?: string | undefined; duration?: number | undefined; price?: number | undefined; color?: string | undefined; }' is not assignable to type 'Service'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/AppointmentsPage.tsx(589,64): error TS2532: Object is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(626,59): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(629,31): error TS2322: Type '{ enabled: boolean; day?: number | undefined; startTime?: string | undefined; endTime?: string | undefined; breakStart?: string; breakEnd?: string; }' is not assignable to type 'AvailabilitySlot'.
+  Types of property 'day' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/components/AppointmentsPage.tsx(629,75): error TS2532: Object is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(635,26): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(637,55): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(639,31): error TS2322: Type '{ startTime: string; day?: number | undefined; enabled?: boolean | undefined; endTime?: string | undefined; breakStart?: string; breakEnd?: string; }' is not assignable to type 'AvailabilitySlot'.
+  Types of property 'day' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/components/AppointmentsPage.tsx(643,55): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(645,31): error TS2322: Type '{ endTime: string; day?: number | undefined; enabled?: boolean | undefined; startTime?: string | undefined; breakStart?: string; breakEnd?: string; }' is not assignable to type 'AvailabilitySlot'.
+  Types of property 'day' are incompatible.
+    Type 'number | undefined' is not assignable to type 'number'.
+      Type 'undefined' is not assignable to type 'number'.
+src/components/AppointmentsPage.tsx(648,82): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AppointmentsPage.tsx(648,113): error TS18048: 'slot' is possibly 'undefined'.
+src/components/AuditLogTab.tsx(4,3): error TS6133: 'Filter' is declared but its value is never read.
+src/components/AuditLogTab.tsx(4,39): error TS6133: 'Activity' is declared but its value is never read.
+src/components/AuditTrailExportPage.tsx(4,30): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/AuditTrailExportPage.tsx(4,40): error TS6133: 'Filter' is declared but its value is never read.
+src/components/AuditTrailExportPage.tsx(24,10): error TS6133: 'dateRange' is declared but its value is never read.
+src/components/AuditTrailExportPage.tsx(24,21): error TS6133: 'setDateRange' is declared but its value is never read.
+src/components/AuthCallback.tsx(8,9): error TS6198: All destructured elements are unused.
+src/components/AutoSetupWizard.tsx(2,108): error TS6133: 'Globe' is declared but its value is never read.
+src/components/AutoSetupWizard.tsx(2,115): error TS6133: 'CreditCard' is declared but its value is never read.
+src/components/AvaExecutiveAssistant.tsx(2,68): error TS6133: 'Briefcase' is declared but its value is never read.
+src/components/AvaExecutiveAssistant.tsx(2,79): error TS6133: 'Settings' is declared but its value is never read.
+src/components/AvaExecutiveAssistant.tsx(2,118): error TS6133: 'AlertTriangle' is declared but its value is never read.
+src/components/AvaExecutiveAssistant.tsx(2,144): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/AvaExecutiveAssistant.tsx(103,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/AvaExecutiveAssistant.tsx(378,20): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/AvaExecutiveAssistant.tsx(393,18): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/BillingPage.tsx(3,22): error TS6133: 'subscriptionsAPI' is declared but its value is never read.
+src/components/BlogManager.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/BlogManager.tsx(5,3): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/BlogManager.tsx(5,16): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/BlogManager.tsx(5,44): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/BlogManager.tsx(5,55): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/BlogManager.tsx(6,13): error TS6133: 'Filter' is declared but its value is never read.
+src/components/BlogManager.tsx(7,36): error TS6133: 'AlignLeft' is declared but its value is never read.
+src/components/BlogManager.tsx(7,47): error TS6133: 'AlignCenter' is declared but its value is never read.
+src/components/BlogManager.tsx(7,60): error TS6133: 'AlignRight' is declared but its value is never read.
+src/components/BlogManager.tsx(8,16): error TS6133: 'TagIcon' is declared but its value is never read.
+src/components/BlogManager.tsx(8,25): error TS6133: 'Upload' is declared but its value is never read.
+src/components/BlogManager.tsx(8,33): error TS6133: 'Star' is declared but its value is never read.
+src/components/BlogManager.tsx(8,39): error TS6133: 'Archive' is declared but its value is never read.
+src/components/BlogManager.tsx(108,9): error TS6133: 'user' is declared but its value is never read.
+src/components/BlogManager.tsx(120,10): error TS6133: 'expandedPost' is declared but its value is never read.
+src/components/BlogManager.tsx(120,24): error TS6133: 'setExpandedPost' is declared but its value is never read.
+src/components/BlogManager.tsx(190,13): error TS7030: Not all code paths return a value.
+src/components/BulkImportPage.tsx(2,58): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/BulkImportPage.tsx(2,71): error TS6133: 'X' is declared but its value is never read.
+src/components/BulkMessagingPage.tsx(5,16): error TS6133: 'Users' is declared but its value is never read.
+src/components/BulkMessagingPage.tsx(5,40): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/components/BulkMessagingPage.tsx(5,54): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/BulkMessagingPage.tsx(5,67): error TS6133: 'Upload' is declared but its value is never read.
+src/components/BulkMessagingPage.tsx(5,75): error TS6133: 'Filter' is declared but its value is never read.
+src/components/CACopilotPage.tsx(59,23): error TS2532: Object is possibly 'undefined'.
+src/components/CACopilotPage.tsx(513,10): error TS6133: 'accountConfirmed' is declared but its value is never read.
+src/components/ChangelogPage.tsx(2,40): error TS6133: 'Palette' is declared but its value is never read.
+src/components/ChangelogPage.tsx(2,49): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/CheckoutPage.tsx(3,22): error TS6133: 'Truck' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(3,25): error TS6133: 'Send' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(4,3): error TS6133: 'Phone' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(4,10): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(5,62): error TS6133: 'Globe' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(64,10): error TS6133: 'statsLoading' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(65,10): error TS6133: 'showCredentials' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(65,27): error TS6133: 'setShowCredentials' is declared but its value is never read.
+src/components/ClaudeWhatsAppSettings.tsx(167,8): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/ClaudeWhatsAppSettings.tsx(167,26): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/ClaudeWhatsAppSettings.tsx(169,8): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/ClaudeWhatsAppSettings.tsx(169,26): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/ClientPortal.tsx(4,3): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/ClientPortal.tsx(4,34): error TS6133: 'EyeOff' is declared but its value is never read.
+src/components/ClientPortal.tsx(5,11): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/ClientPortal.tsx(5,24): error TS6133: 'Building2' is declared but its value is never read.
+src/components/ClientPortal.tsx(5,35): error TS6133: 'Mail' is declared but its value is never read.
+src/components/ClientPortal.tsx(5,41): error TS6133: 'Phone' is declared but its value is never read.
+src/components/ClientPortal.tsx(5,73): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/ClientPortal.tsx(76,11): error TS6196: 'ClientPortalView' is declared but never used.
+src/components/ClientPortal.tsx(145,10): error TS6133: 'clientLoading' is declared but its value is never read.
+src/components/ContactImportModal.tsx(44,24): error TS2345: Argument of type 'File | undefined' is not assignable to parameter of type 'File'.
+  Type 'undefined' is not assignable to type 'File'.
+src/components/ConversationsPage.tsx(1,59): error TS6133: 'useMemo' is declared but its value is never read.
+src/components/ConversationsPage.tsx(3,11): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ConversationsPage.tsx(3,53): error TS6133: 'Tag' is declared but its value is never read.
+src/components/ConversationsPage.tsx(4,58): error TS6133: 'MoreVertical' is declared but its value is never read.
+src/components/ConversationsPage.tsx(5,3): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/ConversationsPage.tsx(5,55): error TS6133: 'Wifi' is declared but its value is never read.
+src/components/ConversationsPage.tsx(5,61): error TS6133: 'WifiOff' is declared but its value is never read.
+src/components/ConversationsPage.tsx(6,20): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/ConversationsPage.tsx(6,28): error TS6133: 'Globe' is declared but its value is never read.
+src/components/ConversationsPage.tsx(6,35): error TS6133: 'Building2' is declared but its value is never read.
+src/components/ConversationsPage.tsx(6,60): error TS6133: 'StarHalf' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,11): error TS6133: 'StarIcon' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,21): error TS6133: 'MessageCircle' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,36): error TS6133: 'Bell' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,42): error TS6133: 'Settings' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,52): error TS6133: 'Menu' is declared but its value is never read.
+src/components/ConversationsPage.tsx(7,58): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/ConversationsPage.tsx(8,3): error TS6133: 'Hash' is declared but its value is never read.
+src/components/ConversationsPage.tsx(8,9): error TS6133: 'AtSign' is declared but its value is never read.
+src/components/ConversationsPage.tsx(8,26): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/components/ConversationsPage.tsx(8,37): error TS6133: 'FileText' is declared but its value is never read.
+src/components/ConversationsPage.tsx(8,47): error TS6133: 'Video' is declared but its value is never read.
+src/components/ConversationsPage.tsx(119,9): error TS6133: 'business' is declared but its value is never read.
+src/components/ConversationsPage.tsx(372,140): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(373,22): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(391,111): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(392,52): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(393,24): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(394,24): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(467,130): error TS2532: Object is possibly 'undefined'.
+src/components/ConversationsPage.tsx(468,16): error TS2532: Object is possibly 'undefined'.
+src/components/ConversationsPage.tsx(476,16): error TS2532: Object is possibly 'undefined'.
+src/components/ConversationsPage.tsx(514,69): error TS2532: Object is possibly 'undefined'.
+src/components/ConversationsPage.tsx(531,85): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(532,28): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(533,58): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(677,113): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(678,44): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(679,16): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/ConversationsPage.tsx(679,30): error TS18048: 'chConf' is possibly 'undefined'.
+src/components/CookieConsentBanner.tsx(23,13): error TS7030: Not all code paths return a value.
+src/components/CourseBuilder.tsx(3,44): error TS6133: 'Clock' is declared but its value is never read.
+src/components/CourseBuilder.tsx(3,51): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(3,13): error TS6133: 'Share2' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(4,34): error TS6133: 'Clock' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(5,8): error TS6133: 'Copy' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(6,41): error TS6133: 'Plus' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(7,19): error TS6133: 'Sun' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(7,24): error TS6133: 'Moon' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(7,30): error TS6133: 'Layers' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(7,38): error TS6133: 'Smile' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(8,3): error TS6133: 'Hash' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(8,9): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(8,22): error TS6133: 'GripVertical' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(233,10): error TS6133: 'showFilters' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(233,23): error TS6133: 'setShowFilters' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(253,10): error TS6133: 'showStickers' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(253,24): error TS6133: 'setShowStickers' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(301,9): error TS6133: 'saveState' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(442,9): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(443,14): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(444,14): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(445,14): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(446,14): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(461,18): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(462,23): error TS18048: 'style' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(498,13): error TS6133: 'res' is declared but its value is never read.
+src/components/CreativeGeneratorPage.tsx(520,27): error TS2345: Argument of type 'Template | undefined' is not assignable to parameter of type 'SetStateAction<Template | null>'.
+  Type 'undefined' is not assignable to type 'SetStateAction<Template | null>'.
+src/components/CreativeGeneratorPage.tsx(523,27): error TS2345: Argument of type 'Template | undefined' is not assignable to parameter of type 'SetStateAction<Template | null>'.
+  Type 'undefined' is not assignable to type 'SetStateAction<Template | null>'.
+src/components/CreativeGeneratorPage.tsx(636,17): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(636,60): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(637,18): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(648,40): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(715,88): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(759,41): error TS18048: 'elementPositions.productImage' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(759,85): error TS18048: 'elementPositions.productImage' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(772,48): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(779,41): error TS18048: 'elementPositions.headline' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(779,81): error TS18048: 'elementPositions.headline' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(787,39): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(800,41): error TS18048: 'elementPositions.subtitle' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(800,81): error TS18048: 'elementPositions.subtitle' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(808,39): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(820,41): error TS18048: 'elementPositions.businessInfo' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(820,85): error TS18048: 'elementPositions.businessInfo' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(827,114): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(954,20): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1367,66): error TS2345: Argument of type '(prev: Record<string, { x: number; y: number; }>) => { [x: string]: { x: number; y: number; } | { x: number; y?: number | undefined; }; }' is not assignable to parameter of type 'SetStateAction<Record<string, { x: number; y: number; }>>'.
+  Type '(prev: Record<string, { x: number; y: number; }>) => { [x: string]: { x: number; y: number; } | { x: number; y?: number | undefined; }; }' is not assignable to type '(prevState: Record<string, { x: number; y: number; }>) => Record<string, { x: number; y: number; }>'.
+    Type '{ [x: string]: { x: number; y: number; } | { x: number; y?: number | undefined; }; }' is not assignable to type 'Record<string, { x: number; y: number; }>'.
+      'string' index signatures are incompatible.
+        Type '{ x: number; y: number; } | { x: number; y?: number | undefined; }' is not assignable to type '{ x: number; y: number; }'.
+          Type '{ x: number; y?: number | undefined; }' is not assignable to type '{ x: number; y: number; }'.
+            Types of property 'y' are incompatible.
+              Type 'number | undefined' is not assignable to type 'number'.
+                Type 'undefined' is not assignable to type 'number'.
+src/components/CreativeGeneratorPage.tsx(1373,66): error TS2345: Argument of type '(prev: Record<string, { x: number; y: number; }>) => { [x: string]: { x: number; y: number; } | { y: number; x?: number | undefined; }; }' is not assignable to parameter of type 'SetStateAction<Record<string, { x: number; y: number; }>>'.
+  Type '(prev: Record<string, { x: number; y: number; }>) => { [x: string]: { x: number; y: number; } | { y: number; x?: number | undefined; }; }' is not assignable to type '(prevState: Record<string, { x: number; y: number; }>) => Record<string, { x: number; y: number; }>'.
+    Type '{ [x: string]: { x: number; y: number; } | { y: number; x?: number | undefined; }; }' is not assignable to type 'Record<string, { x: number; y: number; }>'.
+      'string' index signatures are incompatible.
+        Type '{ x: number; y: number; } | { y: number; x?: number | undefined; }' is not assignable to type '{ x: number; y: number; }'.
+          Type '{ y: number; x?: number | undefined; }' is not assignable to type '{ x: number; y: number; }'.
+            Types of property 'x' are incompatible.
+              Type 'number | undefined' is not assignable to type 'number'.
+                Type 'undefined' is not assignable to type 'number'.
+src/components/CreativeGeneratorPage.tsx(1599,75): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1621,37): error TS18048: 'elementPositions.productImage' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1621,81): error TS18048: 'elementPositions.productImage' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1633,123): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1639,37): error TS18048: 'elementPositions.headline' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1639,77): error TS18048: 'elementPositions.headline' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1643,205): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1650,37): error TS18048: 'elementPositions.subtitle' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1650,77): error TS18048: 'elementPositions.subtitle' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1654,208): error TS2532: Object is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1661,37): error TS18048: 'elementPositions.businessInfo' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1661,81): error TS18048: 'elementPositions.businessInfo' is possibly 'undefined'.
+src/components/CreativeGeneratorPage.tsx(1667,160): error TS2532: Object is possibly 'undefined'.
+src/components/CRMPage.tsx(3,17): error TS6133: 'Filter' is declared but its value is never read.
+src/components/CRMPage.tsx(3,35): error TS6133: 'MoreVertical' is declared but its value is never read.
+src/components/CRMPage.tsx(3,62): error TS6133: 'Tag' is declared but its value is never read.
+src/components/CRMPage.tsx(3,82): error TS6133: 'Eye' is declared but its value is never read.
+src/components/CRMPage.tsx(3,97): error TS6133: 'Upload' is declared but its value is never read.
+src/components/CRMPage.tsx(4,79): error TS6133: 'Star' is declared but its value is never read.
+src/components/CRMPage.tsx(5,14): error TS6133: 'PieChart' is declared but its value is never read.
+src/components/CRMPage.tsx(5,52): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/components/CRMPage.tsx(5,63): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/CRMPage.tsx(5,76): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/CRMPage.tsx(5,97): error TS6133: 'Building2' is declared but its value is never read.
+src/components/CRMPage.tsx(6,10): error TS6133: 'Linkedin' is declared but its value is never read.
+src/components/CRMPage.tsx(6,20): error TS6133: 'Twitter' is declared but its value is never read.
+src/components/CRMPage.tsx(6,29): error TS6133: 'Facebook' is declared but its value is never read.
+src/components/CRMPage.tsx(6,39): error TS6133: 'Copy' is declared but its value is never read.
+src/components/CRMPage.tsx(6,45): error TS6133: 'Check' is declared but its value is never read.
+src/components/CRMPage.tsx(6,73): error TS6133: 'Settings' is declared but its value is never read.
+src/components/CRMPage.tsx(6,83): error TS6133: 'Share2' is declared but its value is never read.
+src/components/CRMPage.tsx(6,100): error TS6133: 'Smartphone' is declared but its value is never read.
+src/components/CRMPage.tsx(7,8): error TS6133: 'Shield' is declared but its value is never read.
+src/components/CRMPage.tsx(7,22): error TS6133: 'MessageCircle' is declared but its value is never read.
+src/components/CRMPage.tsx(7,37): error TS6133: 'Paperclip' is declared but its value is never read.
+src/components/CRMPage.tsx(7,48): error TS6133: 'Camera' is declared but its value is never read.
+src/components/CRMPage.tsx(7,56): error TS6133: 'Video' is declared but its value is never read.
+src/components/CRMPage.tsx(7,63): error TS6133: 'Headphones' is declared but its value is never read.
+src/components/CRMPage.tsx(7,75): error TS6133: 'Heart' is declared but its value is never read.
+src/components/CRMPage.tsx(7,82): error TS6133: 'ThumbsUp' is declared but its value is never read.
+src/components/CRMPage.tsx(11,23): error TS6133: 'businessAPI' is declared but its value is never read.
+src/components/CRMPage.tsx(11,74): error TS6133: 'pipelinesAPI' is declared but its value is never read.
+src/components/CRMPage.tsx(73,11): error TS6196: 'Pipeline' is declared but never used.
+src/components/CRMPage.tsx(289,9): error TS6133: 'navigate' is declared but its value is never read.
+src/components/CRMPage.tsx(290,9): error TS6198: All destructured elements are unused.
+src/components/CRMPage.tsx(291,9): error TS6133: 'info' is declared but its value is never read.
+src/components/CRMPage.tsx(300,10): error TS6133: 'error' is declared but its value is never read.
+src/components/CRMPage.tsx(300,17): error TS6133: 'setError' is declared but its value is never read.
+src/components/CRMPage.tsx(311,10): error TS6133: 'pipelineId' is declared but its value is never read.
+src/components/CRMPage.tsx(311,22): error TS6133: 'setPipelineId' is declared but its value is never read.
+src/components/CRMPage.tsx(316,10): error TS6133: 'dateRange' is declared but its value is never read.
+src/components/CRMPage.tsx(316,21): error TS6133: 'setDateRange' is declared but its value is never read.
+src/components/CRMPage.tsx(559,17): error TS2345: Argument of type '(prev: Contact[]) => (Contact | { notes: (Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]; lastActivity: string; ... 20 more ...; customFields?: { ...; }[] | undefined; })[]' is not assignable to parameter of type 'SetStateAction<Contact[]>'.
+  Type '(prev: Contact[]) => (Contact | { notes: (Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]; lastActivity: string; ... 20 more ...; customFields?: { ...; }[] | undefined; })[]' is not assignable to type '(prevState: Contact[]) => Contact[]'.
+    Type '(Contact | { notes: (Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]; lastActivity: string; id: string; name: string; phone: string; ... 17 more ...; customFields?: { ...; }[] | undefined; })[]' is not assignable to type 'Contact[]'.
+      Type 'Contact | { notes: (Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]; lastActivity: string; id: string; name: string; phone: string; ... 17 more ...; customFields?: { ...; }[] | undefined; }' is not assignable to type 'Contact'.
+        Type '{ notes: (Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]; lastActivity: string; id: string; name: string; phone: string; email: string; ... 16 more ...; customFields?: { key: string; value: string; }[]; }' is not assignable to type 'Contact'.
+          Types of property 'notes' are incompatible.
+            Type '(Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; })[]' is not assignable to type 'Note[]'.
+              Type 'Note | { id: string; content: string; createdAt: string | undefined; type: "note"; author: string; }' is not assignable to type 'Note'.
+                Type '{ id: string; content: string; createdAt: string | undefined; type: "note"; author: string; }' is not assignable to type 'Note'.
+                  Types of property 'createdAt' are incompatible.
+                    Type 'string | undefined' is not assignable to type 'string'.
+                      Type 'undefined' is not assignable to type 'string'.
+src/components/CustomerAccountPage.tsx(3,53): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/CustomerAccountPage.tsx(4,39): error TS6133: 'CreditCard' is declared but its value is never read.
+src/components/CustomerAccountPage.tsx(181,123): error TS18048: 'status' is possibly 'undefined'.
+src/components/CustomerAccountPage.tsx(182,30): error TS18048: 'status' is possibly 'undefined'.
+src/components/CustomerAccountPage.tsx(183,30): error TS18048: 'status' is possibly 'undefined'.
+src/components/CustomerJourneyPage.tsx(2,33): error TS6133: 'ShoppingCart' is declared but its value is never read.
+src/components/CustomerJourneyPage.tsx(2,75): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/CustomFieldsBuilder.tsx(6,46): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/CustomFieldsBuilder.tsx(6,59): error TS6133: 'Check' is declared but its value is never read.
+src/components/CustomFieldsBuilder.tsx(7,11): error TS6133: 'ArrowUpDown' is declared but its value is never read.
+src/components/CustomFieldsBuilder.tsx(7,24): error TS6133: 'FileText' is declared but its value is never read.
+src/components/CustomFieldsBuilder.tsx(260,48): error TS2345: Argument of type 'CustomField | undefined' is not assignable to parameter of type 'CustomField'.
+  Type 'undefined' is not assignable to type 'CustomField'.
+src/components/CustomFieldsBuilder.tsx(322,24): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/DashboardPage.tsx(1,51): error TS6133: 'useMemo' is declared but its value is never read.
+src/components/DashboardPage.tsx(5,42): error TS6133: 'ArrowUpRight' is declared but its value is never read.
+src/components/DashboardPage.tsx(5,56): error TS6133: 'ArrowDownRight' is declared but its value is never read.
+src/components/DashboardPage.tsx(6,15): error TS6133: 'Eye' is declared but its value is never read.
+src/components/DashboardPage.tsx(6,20): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/DashboardPage.tsx(9,3): error TS6133: 'LineChart' is declared but its value is never read.
+src/components/DataBackupPage.tsx(4,59): error TS6133: 'AlertTriangle' is declared but its value is never read.
+src/components/DataBackupPage.tsx(4,96): error TS6133: 'Trash2' is declared but its value is never read.
+src/components/DocumentsPage.tsx(138,5): error TS2322: Type '{ description?: string | undefined; qty?: number | undefined; rate?: number | undefined; amount?: number | undefined; }' is not assignable to type '{ description: string; qty: number; rate: number; amount: number; }'.
+  Types of property 'description' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/DocumentsPage.tsx(140,7): error TS2532: Object is possibly 'undefined'.
+src/components/DocumentsPage.tsx(140,29): error TS2532: Object is possibly 'undefined'.
+src/components/DocumentsPage.tsx(140,48): error TS2532: Object is possibly 'undefined'.
+src/components/DocumentsPage.tsx(242,61): error TS18048: 'cfg' is possibly 'undefined'.
+src/components/DocumentsPage.tsx(243,24): error TS18048: 'cfg' is possibly 'undefined'.
+src/components/DograhSettings.tsx(4,3): error TS6133: 'Phone' is declared but its value is never read.
+src/components/DograhSettings.tsx(4,10): error TS6133: 'Globe' is declared but its value is never read.
+src/components/ECommercePage.tsx(2,59): error TS6133: 'Eye' is declared but its value is never read.
+src/components/ECommercePage.tsx(2,89): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/ECommercePage.tsx(2,227): error TS6133: 'Copy' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,34): error TS6133: 'Phone' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,41): error TS6133: 'Mail' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,47): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,55): error TS6133: 'Package' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,77): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(2,90): error TS6133: 'Copy' is declared but its value is never read.
+src/components/EmailLeadImporter.tsx(36,5): error TS2322: Type '{ name?: string | undefined; phone?: string | undefined; email?: string | undefined; product?: string | undefined; requirement?: string | undefined; city?: string | undefined; }' is not assignable to type 'LeadData'.
+  Types of property 'name' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/EmailLeadImporter.tsx(51,9): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/EmailLeadImporter.tsx(63,38): error TS2532: Object is possibly 'undefined'.
+src/components/EmailLeadImporter.tsx(69,44): error TS2532: Object is possibly 'undefined'.
+src/components/EmailLeadImporter.tsx(75,38): error TS2532: Object is possibly 'undefined'.
+src/components/EmailMarketingPage.tsx(3,46): error TS6133: 'Play' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(3,52): error TS6133: 'Pause' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(4,3): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(5,45): error TS6133: 'Filter' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(5,53): error TS6133: 'Download' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(5,63): error TS6133: 'Upload' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(6,28): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(6,41): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(6,65): error TS6133: 'PieChart' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(11,54): error TS6133: 'LineChart' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(11,65): error TS6133: 'Line' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(11,71): error TS6133: 'Legend' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(13,34): error TS6133: 'analyticsAPI' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(114,7): error TS6133: 'COLORS' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(194,10): error TS6133: 'showTemplateEditor' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(195,10): error TS6133: 'showSmtpConfig' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(196,10): error TS6133: 'showABTest' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(196,22): error TS6133: 'setShowABTest' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(197,10): error TS6133: 'editingCampaign' is declared but its value is never read.
+src/components/EmailMarketingPage.tsx(325,9): error TS6133: 'formatPct' is declared but its value is never read.
+src/components/ErrorBoundary.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/FeatureFlagsTab.tsx(69,18): error TS2345: Argument of type '(prev: FeatureFlags) => { [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to parameter of type 'SetStateAction<FeatureFlags>'.
+  Type '(prev: FeatureFlags) => { [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to type '(prevState: FeatureFlags) => FeatureFlags'.
+    Type '{ [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to type 'FeatureFlags'.
+      'string' index signatures are incompatible.
+        Type 'FeatureFlag | { enabled: boolean; source?: string | undefined; }' is not assignable to type 'FeatureFlag'.
+          Type '{ enabled: boolean; source?: string | undefined; }' is not assignable to type 'FeatureFlag'.
+            Types of property 'source' are incompatible.
+              Type 'string | undefined' is not assignable to type 'string'.
+                Type 'undefined' is not assignable to type 'string'.
+src/components/FeatureFlagsTab.tsx(76,16): error TS2345: Argument of type '(prev: FeatureFlags) => { [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to parameter of type 'SetStateAction<FeatureFlags>'.
+  Type '(prev: FeatureFlags) => { [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to type '(prevState: FeatureFlags) => FeatureFlags'.
+    Type '{ [x: string]: FeatureFlag | { enabled: boolean; source?: string | undefined; }; }' is not assignable to type 'FeatureFlags'.
+      'string' index signatures are incompatible.
+        Type 'FeatureFlag | { enabled: boolean; source?: string | undefined; }' is not assignable to type 'FeatureFlag'.
+          Type '{ enabled: boolean; source?: string | undefined; }' is not assignable to type 'FeatureFlag'.
+            Types of property 'source' are incompatible.
+              Type 'string | undefined' is not assignable to type 'string'.
+                Type 'undefined' is not assignable to type 'string'.
+src/components/FeatureFlagsTab.tsx(139,14): error TS2532: Object is possibly 'undefined'.
+src/components/FeaturesPage.tsx(1,1): error TS6133: 'useState' is declared but its value is never read.
+src/components/FileUploader.tsx(2,28): error TS6133: 'Image' is declared but its value is never read.
+src/components/FileUploader.tsx(2,35): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/FileUploader.tsx(2,48): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/FileUploader.tsx(94,33): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(name: string, value: string | Blob): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string | Blob'.
+      Type 'undefined' is not assignable to type 'string | Blob'.
+  Overload 2 of 3, '(name: string, value: string): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+  Overload 3 of 3, '(name: string, blobValue: Blob, filename?: string | undefined): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'Blob'.
+      Type 'undefined' is not assignable to type 'Blob'.
+src/components/FunnelBlockEditor.tsx(4,35): error TS6133: 'Eye' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(5,3): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(5,20): error TS6133: 'Bold' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(5,26): error TS6133: 'Italic' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(6,39): error TS6133: 'Link' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(52,9): error TS6133: 'Tag' is declared but its value is never read.
+src/components/FunnelBlockEditor.tsx(371,6): error TS2322: Type 'Block | undefined' is not assignable to type 'Block'.
+  Type 'undefined' is not assignable to type 'Block'.
+src/components/FunnelBlockEditor.tsx(371,24): error TS2322: Type 'Block | undefined' is not assignable to type 'Block'.
+  Type 'undefined' is not assignable to type 'Block'.
+src/components/FunnelBlockEditor.tsx(378,6): error TS2322: Type 'Block | undefined' is not assignable to type 'Block'.
+  Type 'undefined' is not assignable to type 'Block'.
+src/components/FunnelBlockEditor.tsx(378,24): error TS2322: Type 'Block | undefined' is not assignable to type 'Block'.
+  Type 'undefined' is not assignable to type 'Block'.
+src/components/FunnelBlockEditor.tsx(593,17): error TS6133: 'tag' is declared but its value is never read.
+src/components/FunnelEditorPage.tsx(4,31): error TS6133: 'Trash2' is declared but its value is never read.
+src/components/FunnelEditorPage.tsx(13,34): error TS6133: 'Block' is declared but its value is never read.
+src/components/FunnelEditorPage.tsx(276,32): error TS2345: Argument of type 'FunnelPage | undefined' is not assignable to parameter of type 'FunnelPage'.
+  Type 'undefined' is not assignable to type 'FunnelPage'.
+src/components/FunnelEditorPage.tsx(306,9): error TS6133: 'handleDeletePage' is declared but its value is never read.
+src/components/FunnelTemplatePicker.tsx(231,28): error TS18048: 'meta' is possibly 'undefined'.
+src/components/FunnelTemplatePicker.tsx(239,20): error TS18048: 'meta' is possibly 'undefined'.
+src/components/FunnelTemplatePicker.tsx(288,23): error TS6133: 'CatIcon' is declared but its value is never read.
+src/components/FunnelTemplatePicker.tsx(288,33): error TS18048: 'meta' is possibly 'undefined'.
+src/components/FunnelTemplatePicker.tsx(325,125): error TS18048: 'meta' is possibly 'undefined'.
+src/components/FunnelTemplatePicker.tsx(326,26): error TS18048: 'meta' is possibly 'undefined'.
+src/components/GoogleBusinessPage.tsx(41,10): error TS6133: 'autoPostLoading' is declared but its value is never read.
+src/components/GoogleBusinessPage.tsx(41,27): error TS6133: 'setAutoPostLoading' is declared but its value is never read.
+src/components/GoogleReviewsQRPage.tsx(1,31): error TS6133: 'useRef' is declared but its value is never read.
+src/components/GoogleReviewsQRPage.tsx(141,29): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/InfrastructureHealthTab.tsx(4,46): error TS6133: 'Database' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,48): error TS6133: 'Filter' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,56): error TS6133: 'Download' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,66): error TS6133: 'Upload' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,74): error TS6133: 'TrendingDown' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,88): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(3,100): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/InventoryManagementPage.tsx(19,9): error TS6133: 'toast' is declared but its value is never read.
+src/components/JimiAssistant.tsx(2,23): error TS6133: 'MessageCircle' is declared but its value is never read.
+src/components/JimiAssistant.tsx(2,98): error TS6133: 'PhoneCall' is declared but its value is never read.
+src/components/JimiAssistant.tsx(2,109): error TS6133: 'Heart' is declared but its value is never read.
+src/components/JimiAssistant.tsx(2,116): error TS6133: 'Users' is declared but its value is never read.
+src/components/JimiAssistant.tsx(163,16): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/LandingPage.tsx(5,40): error TS6133: 'Phone' is declared but its value is never read.
+src/components/LandingPage.tsx(7,53): error TS6133: 'Star' is declared but its value is never read.
+src/components/LandingPage.tsx(21,57): error TS18048: 'e' is possibly 'undefined'.
+src/components/LandingPage.tsx(192,9): error TS6133: 'demoLogin' is declared but its value is never read.
+src/components/LandingPage.tsx(211,27): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(212,27): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(215,41): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(216,41): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(314,130): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(314,197): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(315,117): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(316,114): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPage.tsx(319,129): error TS2532: Object is possibly 'undefined'.
+src/components/LandingPageBottom.tsx(3,41): error TS6133: 'Zap' is declared but its value is never read.
+src/components/LandingPageBottom.tsx(18,57): error TS18048: 'e' is possibly 'undefined'.
+src/components/LandingPageBuilderPage.tsx(3,30): error TS6133: 'Eye' is declared but its value is never read.
+src/components/LandingPageBuilderPage.tsx(3,50): error TS6133: 'Palette' is declared but its value is never read.
+src/components/LandingPageBuilderPage.tsx(3,59): error TS6133: 'Code' is declared but its value is never read.
+src/components/LandingPageBuilderPage.tsx(86,9): error TS6133: 'removeBlock' is declared but its value is never read.
+src/components/LeadFinderPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/LeadFinderPage.tsx(2,56): error TS6133: 'Filter' is declared but its value is never read.
+src/components/LeadFinderPage.tsx(2,64): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/LeadFinderPage.tsx(52,9): error TS6133: 'business' is declared but its value is never read.
+src/components/LeadGenerationPage.tsx(2,211): error TS6133: 'MailOpen' is declared but its value is never read.
+src/components/LeadGenerationPage.tsx(2,221): error TS6133: 'Shield' is declared but its value is never read.
+src/components/LeadGenerationPage.tsx(46,9): error TS6133: 'showExport' is declared but its value is never read.
+src/components/LeadGenerationPage.tsx(196,9): error TS6133: 'handleExport' is declared but its value is never read.
+src/components/LeadScoreBadge.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/LiveChatManager.tsx(3,26): error TS6133: 'Filter' is declared but its value is never read.
+src/components/LiveChatManager.tsx(4,3): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/LiveChatManager.tsx(4,33): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/LiveChatManager.tsx(5,3): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/LiveChatManager.tsx(5,32): error TS6133: 'ArrowUpRight' is declared but its value is never read.
+src/components/LiveChatManager.tsx(5,46): error TS6133: 'MoreVertical' is declared but its value is never read.
+src/components/LiveChatManager.tsx(5,60): error TS6133: 'Settings' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,3): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,17): error TS6133: 'Wifi' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,23): error TS6133: 'WifiOff' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,32): error TS6133: 'Archive' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,41): error TS6133: 'Tag' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,46): error TS6133: 'Paperclip' is declared but its value is never read.
+src/components/LiveChatManager.tsx(6,57): error TS6133: 'Smile' is declared but its value is never read.
+src/components/LiveChatManager.tsx(7,3): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/LiveChatManager.tsx(7,14): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/LiveChatManager.tsx(7,26): error TS6133: 'Eye' is declared but its value is never read.
+src/components/LiveChatManager.tsx(7,31): error TS6133: 'RotateCw' is declared but its value is never read.
+src/components/LiveChatManager.tsx(174,16): error TS6133: 'setPage' is declared but its value is never read.
+src/components/LiveChatManager.tsx(175,10): error TS6133: 'pagination' is declared but its value is never read.
+src/components/LiveChatManager.tsx(479,124): error TS18048: 'statusCfg' is possibly 'undefined'.
+src/components/LiveChatManager.tsx(479,145): error TS18048: 'statusCfg' is possibly 'undefined'.
+src/components/LiveChatManager.tsx(480,28): error TS18048: 'statusCfg' is possibly 'undefined'.
+src/components/LiveChatManager.tsx(481,28): error TS18048: 'statusCfg' is possibly 'undefined'.
+src/components/LiveChatManager.tsx(607,29): error TS6133: 'isVisitor' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(4,9): error TS6133: 'ChevronLeft' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(4,22): error TS6133: 'Wifi' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(4,28): error TS6133: 'WifiOff' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(4,72): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(100,20): error TS6133: 'setIsOnline' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(101,23): error TS6133: 'setTypingAgent' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(358,9): error TS6133: 'hexToRgb' is declared but its value is never read.
+src/components/LiveChatWidget.tsx(361,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/LiveChatWidget.tsx(361,49): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/LiveChatWidget.tsx(361,77): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/LoginPage.tsx(3,176): error TS6133: 'Share2' is declared but its value is never read.
+src/components/LoginPage.tsx(3,184): error TS6133: 'Activity' is declared but its value is never read.
+src/components/LoginPage.tsx(3,211): error TS6133: 'Crown' is declared but its value is never read.
+src/components/LoginPage.tsx(3,218): error TS6133: 'Rocket' is declared but its value is never read.
+src/components/LoginPage.tsx(3,231): error TS6133: 'Globe' is declared but its value is never read.
+src/components/LoginPage.tsx(3,238): error TS6133: 'Target' is declared but its value is never read.
+src/components/LoginPage.tsx(3,256): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/LoginPage.tsx(3,266): error TS6133: 'CreditCard' is declared but its value is never read.
+src/components/LoginPage.tsx(3,278): error TS6133: 'Heart' is declared but its value is never read.
+src/components/LoginPage.tsx(3,296): error TS6133: 'Layers' is declared but its value is never read.
+src/components/LoginPage.tsx(3,304): error TS6133: 'Send' is declared but its value is never read.
+src/components/LoginPage.tsx(3,310): error TS6133: 'Instagram' is declared but its value is never read.
+src/components/LoginPage.tsx(3,321): error TS6133: 'Facebook' is declared but its value is never read.
+src/components/LoginPage.tsx(3,331): error TS6133: 'Twitter' is declared but its value is never read.
+src/components/LoginPage.tsx(3,340): error TS6133: 'Youtube' is declared but its value is never read.
+src/components/LoginPage.tsx(3,358): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/components/LoginPage.tsx(3,369): error TS6133: 'Mic' is declared but its value is never read.
+src/components/LoginPage.tsx(3,374): error TS6133: 'Briefcase' is declared but its value is never read.
+src/components/LoginPage.tsx(3,385): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/LoginPage.tsx(16,10): error TS6133: 'tempUserId' is declared but its value is never read.
+src/components/LoginPage.tsx(16,22): error TS6133: 'setTempUserId' is declared but its value is never read.
+src/components/MissedCallSettings.tsx(6,48): error TS6133: 'Building2' is declared but its value is never read.
+src/components/MissedCallSettings.tsx(8,8): error TS6133: 'Bell' is declared but its value is never read.
+src/components/MissedCallSettings.tsx(9,40): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/ModernCRM.tsx(1,27): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/ModernCRM.tsx(1,38): error TS6133: 'useCallback' is declared but its value is never read.
+src/components/ModernCRM.tsx(3,51): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/ModernCRM.tsx(4,3): error TS6133: 'Mail' is declared but its value is never read.
+src/components/ModernCRM.tsx(4,44): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ModernCRM.tsx(4,62): error TS6133: 'Bot' is declared but its value is never read.
+src/components/ModernCRM.tsx(4,67): error TS6133: 'Zap' is declared but its value is never read.
+src/components/ModernCRM.tsx(5,3): error TS6133: 'Crown' is declared but its value is never read.
+src/components/ModernCRM.tsx(5,10): error TS6133: 'Diamond' is declared but its value is never read.
+src/components/ModernCRM.tsx(5,19): error TS6133: 'Activity' is declared but its value is never read.
+src/components/ModernCRM.tsx(6,8): error TS6133: 'Edit2' is declared but its value is never read.
+src/components/ModernCRM.tsx(6,15): error TS6133: 'Trash2' is declared but its value is never read.
+src/components/ModernCRM.tsx(7,14): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/ModernCRM.tsx(7,22): error TS6133: 'Tag' is declared but its value is never read.
+src/components/ModernCRM.tsx(7,41): error TS6133: 'Heart' is declared but its value is never read.
+src/components/ModernCRM.tsx(7,64): error TS6133: 'Wand2' is declared but its value is never read.
+src/components/ModernCRM.tsx(17,9): error TS6133: 'isDemoMode' is declared but its value is never read.
+src/components/ModernCRM.tsx(358,50): error TS6133: 'stats' is declared but its value is never read.
+src/components/ModernDashboard.tsx(4,40): error TS6133: 'Star' is declared but its value is never read.
+src/components/ModernDashboard.tsx(4,51): error TS6133: 'Bot' is declared but its value is never read.
+src/components/ModernDashboard.tsx(4,56): error TS6133: 'Activity' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,11): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,35): error TS6133: 'XIcon' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,42): error TS6133: 'Phone' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,49): error TS6133: 'Mail' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,55): error TS6133: 'Send' is declared but its value is never read.
+src/components/ModernDashboard.tsx(5,66): error TS6133: 'Heart' is declared but its value is never read.
+src/components/ModernDashboard.tsx(6,3): error TS6133: 'Lightbulb' is declared but its value is never read.
+src/components/ModernDashboard.tsx(6,14): error TS6133: 'AlertTriangle' is declared but its value is never read.
+src/components/ModernDashboard.tsx(6,29): error TS6133: 'Award' is declared but its value is never read.
+src/components/ModernDashboard.tsx(6,73): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/components/ModernDashboard.tsx(10,24): error TS6133: 'leadsAPI' is declared but its value is never read.
+src/components/ModernDashboard.tsx(26,10): error TS6133: 'loading' is declared but its value is never read.
+src/components/ModernDashboard.tsx(28,25): error TS6133: 'setPipelineValue' is declared but its value is never read.
+src/components/ModernDashboard.tsx(29,26): error TS6133: 'setConversionRate' is declared but its value is never read.
+src/components/ModernDashboard.tsx(30,10): error TS6133: 'responseTime' is declared but its value is never read.
+src/components/ModernDashboard.tsx(30,24): error TS6133: 'setResponseTime' is declared but its value is never read.
+src/components/ModernDashboard.tsx(31,22): error TS6133: 'setAiInsights' is declared but its value is never read.
+src/components/ModernDashboard.tsx(32,22): error TS6133: 'setRevenueMTD' is declared but its value is never read.
+src/components/ModernDashboard.tsx(33,19): error TS6133: 'setAiScore' is declared but its value is never read.
+src/components/ModernDashboard.tsx(34,20): error TS6133: 'setHotLeads' is declared but its value is never read.
+src/components/ModernDashboard.tsx(35,27): error TS6133: 'setAvgResponseTime' is declared but its value is never read.
+src/components/ModernPage.tsx(9,3): error TS6133: 'Brain' is declared but its value is never read.
+src/components/ModernPage.tsx(10,63): error TS6133: 'Award' is declared but its value is never read.
+src/components/ModernPage.tsx(11,10): error TS6133: 'Send' is declared but its value is never read.
+src/components/ModernPage.tsx(11,24): error TS6133: 'DollarSign' is declared but its value is never read.
+src/components/ModernPage.tsx(11,36): error TS6133: 'Rocket' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(1,27): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(1,38): error TS6133: 'useCallback' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(3,46): error TS6133: 'Zap' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(3,65): error TS6133: 'Globe' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(4,15): error TS6133: 'Clock' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(4,36): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(4,49): error TS6133: 'Eye' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(5,14): error TS6133: 'ListChecks' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(6,23): error TS6133: 'Activity' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(7,3): error TS6133: 'ArrowUpRight' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(7,17): error TS6133: 'Lightbulb' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(7,28): error TS6133: 'Tag' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(7,33): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(7,72): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(8,3): error TS6133: 'Mic' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(8,8): error TS6133: 'MicOff' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(8,16): error TS6133: 'Camera' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(17,9): error TS6133: 'navigate' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(18,9): error TS6198: All destructured elements are unused.
+src/components/ModernWhatsApp.tsx(23,25): error TS6133: 'setConversations' is declared but its value is never read.
+src/components/ModernWhatsApp.tsx(115,74): error TS2322: Type '{ id: string; name: string; lastMsg: string; time: string; unread: number; online: boolean; intent: string; avatar: string; } | undefined' is not assignable to type 'Conversation'.
+  Type 'undefined' is not assignable to type 'Conversation'.
+src/components/OnboardingWizard.tsx(2,66): error TS6133: 'Zap' is declared but its value is never read.
+src/components/OnboardingWizard.tsx(2,71): error TS6133: 'Star' is declared but its value is never read.
+src/components/OrderHistoryPage.tsx(3,19): error TS6133: 'Clock' is declared but its value is never read.
+src/components/OrderHistoryPage.tsx(3,26): error TS6133: 'Truck' is declared but its value is never read.
+src/components/OrderHistoryPage.tsx(3,47): error TS6133: 'XCircle' is declared but its value is never read.
+src/components/OutreachCampaignPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/OutreachCampaignPage.tsx(2,40): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/OutreachCampaignPage.tsx(2,55): error TS6133: 'Users' is declared but its value is never read.
+src/components/OutreachCampaignPage.tsx(2,107): error TS6133: 'Eye' is declared but its value is never read.
+src/components/OutreachCampaignPage.tsx(30,9): error TS6133: 'business' is declared but its value is never read.
+src/components/PaymentLinks.tsx(3,47): error TS6133: 'Clock' is declared but its value is never read.
+src/components/PaymentLinks.tsx(4,42): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/PaymentLinks.tsx(4,55): error TS6133: 'ChevronUp' is declared but its value is never read.
+src/components/PaymentLinks.tsx(6,32): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/PaymentLinks.tsx(589,24): error TS2532: Object is possibly 'undefined'.
+src/components/PipelineViewEnhanced.tsx(2,59): error TS6133: 'Zap' is declared but its value is never read.
+src/components/PipelineViewEnhanced.tsx(24,11): error TS6196: 'PipelineStage' is declared but never used.
+src/components/PlatformEarnings.tsx(2,63): error TS6133: 'Download' is declared but its value is never read.
+src/components/PricingPage.tsx(128,17): error TS6133: 'setPlans' is declared but its value is never read.
+src/components/PublicNavbar.tsx(3,10): error TS6133: 'Zap' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,61): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,90): error TS6133: 'Filter' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,105): error TS6133: 'ArrowUpDown' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,118): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,131): error TS6133: 'ZoomIn' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,139): error TS6133: 'ZoomOut' is declared but its value is never read.
+src/components/PublicStorefront.tsx(2,148): error TS6133: 'RotateCcw' is declared but its value is never read.
+src/components/PublicStorefront.tsx(49,10): error TS6133: 'showReviews' is declared but its value is never read.
+src/components/PublicStorefront.tsx(49,23): error TS6133: 'setShowReviews' is declared but its value is never read.
+src/components/PublicStorefront.tsx(52,10): error TS6133: 'productReviews' is declared but its value is never read.
+src/components/PublicStorefront.tsx(52,26): error TS6133: 'setProductReviews' is declared but its value is never read.
+src/components/ReferralsPage.tsx(35,18): error TS6133: 'user' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,3): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,11): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,21): error TS6133: 'TrendingDown' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,35): error TS6133: 'Phone' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,42): error TS6133: 'Mail' is declared but its value is never read.
+src/components/ReportsPage.tsx(5,48): error TS6133: 'Share2' is declared but its value is never read.
+src/components/ReportsPage.tsx(51,10): error TS6133: 'dateRange' is declared but its value is never read.
+src/components/ReportsPage.tsx(51,21): error TS6133: 'setDateRange' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(1,31): error TS6133: 'useCallback' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,58): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,142): error TS6133: 'Download' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,152): error TS6133: 'Mail' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,158): error TS6133: 'Phone' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,165): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,178): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,192): error TS6133: 'QrCode' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,233): error TS6133: 'Eye' is declared but its value is never read.
+src/components/ResellerDashboardPage.tsx(2,238): error TS6133: 'Edit3' is declared but its value is never read.
+src/components/ResorPayBoard.tsx(4,41): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/ResorPayBoard.tsx(5,14): error TS6133: 'Users' is declared but its value is never read.
+src/components/ResorPayBoard.tsx(5,21): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/RevenueDashboardPage.tsx(5,27): error TS6133: 'TrendingDown' is declared but its value is never read.
+src/components/RevenueDashboardPage.tsx(27,9): error TS6133: 'toast' is declared but its value is never read.
+src/components/RevenueDashboardPage.tsx(252,56): error TS2532: Object is possibly 'undefined'.
+src/components/ReviewRequests.tsx(4,70): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ReviewRequests.tsx(5,11): error TS6133: 'Star' is declared but its value is never read.
+src/components/ReviewRequests.tsx(5,58): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/ReviewRequests.tsx(5,70): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/ReviewRequests.tsx(6,15): error TS6133: 'Globe' is declared but its value is never read.
+src/components/ReviewRequests.tsx(6,22): error TS6133: 'FileText' is declared but its value is never read.
+src/components/ReviewRequests.tsx(6,37): error TS6133: 'ToggleLeft' is declared but its value is never read.
+src/components/ReviewRequests.tsx(6,49): error TS6133: 'ToggleRight' is declared but its value is never read.
+src/components/ReviewRequests.tsx(136,9): error TS6133: 'encoded' is declared but its value is never read.
+src/components/ReviewRequests.tsx(426,9): error TS6133: 'channelCounts' is declared but its value is never read.
+src/components/ReviewsPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/ReviewsPage.tsx(2,31): error TS6133: 'ThumbsUp' is declared but its value is never read.
+src/components/ReviewsPage.tsx(2,41): error TS6133: 'Filter' is declared but its value is never read.
+src/components/ReviewsPage.tsx(2,60): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/SalesAnalyticsPage.tsx(8,62): error TS6133: 'Legend' is declared but its value is never read.
+src/components/SettingsPage.tsx(9,7): error TS6133: 'API_URL' is declared but its value is never read.
+src/components/SettingsPage.tsx(785,9): error TS6133: 'user' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(3,32): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(3,46): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(3,58): error TS6133: 'Plus' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(3,64): error TS6133: 'Settings' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(3,74): error TS6133: 'Bell' is declared but its value is never read.
+src/components/SLAManagementPage.tsx(17,9): error TS6133: 'toast' is declared but its value is never read.
+src/components/SmartReplyPage.tsx(1,20): error TS6133: 'useRef' is declared but its value is never read.
+src/components/SmartReplyPage.tsx(1,28): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/SmartReplyPage.tsx(5,18): error TS6133: 'Send' is declared but its value is never read.
+src/components/SmartReplyPage.tsx(6,34): error TS6133: 'Clock' is declared but its value is never read.
+src/components/SmsMarketing.tsx(3,40): error TS6133: 'Filter' is declared but its value is never read.
+src/components/SmsMarketing.tsx(3,48): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/SmsMarketing.tsx(4,30): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/SmsMarketing.tsx(4,42): error TS6133: 'TrendingDown' is declared but its value is never read.
+src/components/SmsMarketing.tsx(5,12): error TS6133: 'Clock' is declared but its value is never read.
+src/components/SmsMarketing.tsx(5,19): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/SmsMarketing.tsx(5,32): error TS6133: 'Phone' is declared but its value is never read.
+src/components/SmsMarketing.tsx(5,39): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/SmsMarketing.tsx(6,3): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/SmsMarketing.tsx(6,17): error TS6133: 'X' is declared but its value is never read.
+src/components/SmsMarketing.tsx(6,31): error TS6133: 'Eye' is declared but its value is never read.
+src/components/SmsMarketing.tsx(6,36): error TS6133: 'FileText' is declared but its value is never read.
+src/components/SmsMarketing.tsx(6,46): error TS6133: 'Hash' is declared but its value is never read.
+src/components/SmsMarketing.tsx(57,39): error TS6133: 'info' is declared but its value is never read.
+src/components/SmsMarketing.tsx(60,10): error TS6133: 'messages' is declared but its value is never read.
+src/components/SnapshotManager.tsx(8,3): error TS6133: 'X' is declared but its value is never read.
+src/components/SnapshotManager.tsx(21,3): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/components/SnapshotManager.tsx(147,19): error TS18048: 'r' is possibly 'undefined'.
+src/components/SnapshotManager.tsx(147,46): error TS18048: 'r' is possibly 'undefined'.
+src/components/SnapshotManager.tsx(147,48): error TS2339: Property 'value' does not exist on type 'PromiseSettledResult<any>'.
+  Property 'value' does not exist on type 'PromiseRejectedResult'.
+src/components/SocialMediaPage.tsx(3,44): error TS6133: 'MoreVertical' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(6,30): error TS6133: 'Settings' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(7,14): error TS6133: 'Upload' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(7,45): error TS6133: 'Camera' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(72,10): error TS6133: 'loading' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(81,10): error TS6133: 'socialLoading' is declared but its value is never read.
+src/components/SocialMediaPage.tsx(335,32): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(name: string, value: string | Blob): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string | Blob'.
+      Type 'undefined' is not assignable to type 'string | Blob'.
+  Overload 2 of 3, '(name: string, value: string): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+  Overload 3 of 3, '(name: string, blobValue: Blob, filename?: string | undefined): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'Blob'.
+      Type 'undefined' is not assignable to type 'Blob'.
+src/components/SocialMediaPage.tsx(344,43): error TS2345: Argument of type 'File | undefined' is not assignable to parameter of type 'Blob | MediaSource'.
+  Type 'undefined' is not assignable to type 'Blob | MediaSource'.
+src/components/SocialMediaPage.tsx(393,32): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(name: string, value: string | Blob): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string | Blob'.
+      Type 'undefined' is not assignable to type 'string | Blob'.
+  Overload 2 of 3, '(name: string, value: string): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+  Overload 3 of 3, '(name: string, blobValue: Blob, filename?: string | undefined): void', gave the following error.
+    Argument of type 'File | undefined' is not assignable to parameter of type 'Blob'.
+      Type 'undefined' is not assignable to type 'Blob'.
+src/components/SocialMediaPage.tsx(401,43): error TS2345: Argument of type 'File | undefined' is not assignable to parameter of type 'Blob | MediaSource'.
+  Type 'undefined' is not assignable to type 'Blob | MediaSource'.
+src/components/SocialMediaPage.tsx(416,11): error TS18048: 'item' is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(416,48): error TS18048: 'item' is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(446,11): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/SocialMediaPage.tsx(515,11): error TS18048: 'item' is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(515,48): error TS18048: 'item' is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(844,111): error TS2532: Object is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(845,30): error TS2532: Object is possibly 'undefined'.
+src/components/SocialMediaPage.tsx(845,63): error TS2532: Object is possibly 'undefined'.
+src/components/SSOConfigPage.tsx(3,60): error TS6133: 'Lock' is declared but its value is never read.
+src/components/StoreSharePage.tsx(104,13): error TS2532: Object is possibly 'undefined'.
+src/components/StoreSharePage.tsx(132,13): error TS2532: Object is possibly 'undefined'.
+src/components/StoreSharePage.tsx(144,7): error TS2532: Object is possibly 'undefined'.
+src/components/StoreSharePage.tsx(145,7): error TS2532: Object is possibly 'undefined'.
+src/components/StoreSharePage.tsx(156,11): error TS2532: Object is possibly 'undefined'.
+src/components/SubscriptionsTab.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/SubscriptionsTab.tsx(3,15): error TS6133: 'Search' is declared but its value is never read.
+src/components/SuperAdminDashboard.tsx(49,11): error TS6196: 'BusinessRecord' is declared but never used.
+src/components/SupportTicketsPage.tsx(5,29): error TS6133: 'Filter' is declared but its value is never read.
+src/components/SupportTicketsPage.tsx(5,37): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/SupportTicketsPage.tsx(6,3): error TS6133: 'Clock' is declared but its value is never read.
+src/components/SupportTicketsPage.tsx(6,10): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/SupportTicketsPage.tsx(6,23): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(1,31): error TS6133: 'useCallback' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(3,17): error TS6133: 'MoreVertical' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(4,26): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(4,57): error TS6133: 'Check' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(6,43): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(6,58): error TS6133: 'ToggleLeft' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(7,41): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(7,54): error TS6133: 'ToggleRight' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(98,7): error TS6133: 'createDefaultSurvey' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(188,10): error TS6133: 'saving' is declared but its value is never read.
+src/components/SurveyBuilder.tsx(277,29): error TS2532: Object is possibly 'undefined'.
+src/components/SurveyBuilder.tsx(297,8): error TS2322: Type 'Question | undefined' is not assignable to type 'Question'.
+  Type 'undefined' is not assignable to type 'Question'.
+src/components/SurveyBuilder.tsx(297,28): error TS2322: Type 'Question | undefined' is not assignable to type 'Question'.
+  Type 'undefined' is not assignable to type 'Question'.
+src/components/ThemeSelector.tsx(9,54): error TS6133: 'onClose' is declared but its value is never read.
+src/components/ThemeSelector.tsx(129,67): error TS6133: 'isPreviewing' is declared but its value is never read.
+src/components/TriggerLinks.tsx(3,16): error TS6133: 'BarChart3' is declared but its value is never read.
+src/components/TriggerLinks.tsx(4,3): error TS6133: 'Monitor' is declared but its value is never read.
+src/components/TriggerLinks.tsx(4,12): error TS6133: 'Tablet' is declared but its value is never read.
+src/components/TriggerLinks.tsx(4,39): error TS6133: 'XCircle' is declared but its value is never read.
+src/components/TriggerLinks.tsx(6,20): error TS6133: 'Filter' is declared but its value is never read.
+src/components/TriggerLinks.tsx(6,28): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/components/TriggerLinks.tsx(6,52): error TS6133: 'Eye' is declared but its value is never read.
+src/components/TriggerLinks.tsx(7,20): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/TriggerLinks.tsx(7,33): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/TriggerLinks.tsx(8,22): error TS6133: 'Target' is declared but its value is never read.
+src/components/TriggerLinks.tsx(8,42): error TS6133: 'PieIcon' is declared but its value is never read.
+src/components/TriggerLinks.tsx(82,7): error TS6133: 'DEMO_ANALYTICS' is declared but its value is never read.
+src/components/TwoFactorSetupModal.tsx(3,13): error TS6133: 'QrCode' is declared but its value is never read.
+src/components/TwoFactorSetupModal.tsx(21,9): error TS6133: 'API_URL' is declared but its value is never read.
+src/components/UIModeToggle.tsx(2,23): error TS6133: 'Zap' is declared but its value is never read.
+src/components/UnifiedDashboardPage.tsx(2,21): error TS6133: 'FileText' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(4,9): error TS6133: 'Phone' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(4,45): error TS6133: 'Power' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(4,57): error TS6133: 'Link2' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(4,64): error TS6133: 'Copy' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(5,30): error TS6133: 'Hash' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(5,36): error TS6133: 'FileText' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(5,109): error TS6133: 'Smartphone' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(5,130): error TS6133: 'Signal' is declared but its value is never read.
+src/components/UnofficialWhatsAppSettings.tsx(65,10): error TS6133: 'providerDocs' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(2,56): error TS6133: 'Smartphone' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(2,123): error TS6133: 'Copy' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(2,139): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(2,162): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(39,10): error TS6133: 'editing' is declared but its value is never read.
+src/components/VCardMakerPage.tsx(92,9): error TS6133: 'updateCard' is declared but its value is never read.
+src/components/VoiceCallPage.tsx(5,10): error TS6133: 'Wifi' is declared but its value is never read.
+src/components/VoiceCallPage.tsx(5,22): error TS6133: 'FileText' is declared but its value is never read.
+src/components/VoiceCallPage.tsx(420,115): error TS18048: 'tc' is possibly 'undefined'.
+src/components/VoiceCallPage.tsx(420,124): error TS18048: 'tc' is possibly 'undefined'.
+src/components/VoiceCallPage.tsx(420,137): error TS18048: 'tc' is possibly 'undefined'.
+src/components/VoiceCallPage.tsx(420,147): error TS18048: 'tc' is possibly 'undefined'.
+src/components/VoiceCallPage.tsx(535,33): error TS6133: 'name' is declared but its value is never read.
+src/components/VoiceCallPage.tsx(600,28): error TS2532: Object is possibly 'undefined'.
+src/components/VoiceCallPage.tsx(619,22): error TS2532: Object is possibly 'undefined'.
+src/components/VoiceToTextPage.tsx(3,50): error TS6133: 'Check' is declared but its value is never read.
+src/components/VoiceToTextPage.tsx(17,10): error TS6133: 'copied' is declared but its value is never read.
+src/components/WalletHistory.tsx(69,55): error TS18048: 'tc' is possibly 'undefined'.
+src/components/WalletHistory.tsx(70,24): error TS18048: 'tc' is possibly 'undefined'.
+src/components/WalletWidget.tsx(49,9): error TS6133: 'usedPercent' is declared but its value is never read.
+src/components/WebhooksPage.tsx(5,42): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/WebhooksPage.tsx(6,3): error TS6133: 'XCircle' is declared but its value is never read.
+src/components/WebsiteBuilderProductPage.tsx(49,10): error TS6133: 'selectedTemplate' is declared but its value is never read.
+src/components/WebsiteBuilderProductPage.tsx(260,45): error TS6133: 'i' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(8,3): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(211,13): error TS7030: Not all code paths return a value.
+src/components/WhatsAppModule.tsx(593,20): error TS6133: 'setIsTyping' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(603,10): error TS6133: 'showSchedulePopup' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(680,9): error TS6133: 'handleScheduleSend' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(1635,10): error TS6133: 'templatesLoading' is declared but its value is never read.
+src/components/WhatsAppModule.tsx(1796,10): error TS6133: 'autoRepliesLoading' is declared but its value is never read.
+src/components/WhiteLabelSettingsPage.tsx(2,45): error TS6133: 'Link' is declared but its value is never read.
+src/components/WhiteLabelSettingsPage.tsx(2,136): error TS6133: 'ExternalLink' is declared but its value is never read.
+src/components/WhiteLabelSettingsPage.tsx(764,19): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/WhiteLabelSettingsPage.tsx(764,47): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/WhiteLabelSettingsPage.tsx(764,75): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/WorkflowBuilder.tsx(29,3): error TS6133: 'Clock' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(29,10): error TS6133: 'Bot' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(29,43): error TS6133: 'Play' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(29,49): error TS6133: 'Pause' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(30,3): error TS6133: 'Plus' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(30,9): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(31,26): error TS6133: 'X' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(32,18): error TS6133: 'Hash' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(32,24): error TS6133: 'Globe' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(33,20): error TS6133: 'Eye' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(33,25): error TS6133: 'Copy' is declared but its value is never read.
+src/components/WorkflowBuilder.tsx(33,31): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/WorkflowListView.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/WorkflowListView.tsx(6,13): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/WorkflowListView.tsx(6,45): error TS6133: 'Filter' is declared but its value is never read.
+src/components/WorkflowListView.tsx(150,7): error TS2532: Object is possibly 'undefined'.
+src/layouts/AuthLayout.tsx(7,42): error TS6133: 'Send' is declared but its value is never read.
+src/layouts/AuthLayout.tsx(8,73): error TS6133: 'X' is declared but its value is never read.
+src/layouts/AuthLayout.tsx(123,31): error TS6133: 'isDesktop' is declared but its value is never read.
+src/layouts/AuthLayout.tsx(129,9): error TS6133: 'isNative' is declared but its value is never read.
+src/lib/api-utils.ts(53,37): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(data: string): string', gave the following error.
+    Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+  Overload 2 of 2, '(data: string): string', gave the following error.
+    Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/lib/capacitor-app.ts(9,1): error TS6192: All imports in import declaration are unused.
+src/lib/themes.ts(158,3): error TS2322: Type 'Theme | undefined' is not assignable to type 'Theme'.
+  Type 'undefined' is not assignable to type 'Theme'.
+src/services/jimi.service.ts(88,11): error TS6133: 'availableVoices' is declared but its value is never read.
+src/services/jimi.service.ts(223,62): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/services/jimi.service.ts(227,61): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/services/jimi.service.ts(750,18): error TS2322: Type 'string | undefined' is not assignable to type 'string | null'.
+  Type 'undefined' is not assignable to type 'string | null'.

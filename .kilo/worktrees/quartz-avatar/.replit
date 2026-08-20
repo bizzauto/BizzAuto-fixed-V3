@@ -1,0 +1,19 @@
+run = "node dist/server/index.js"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npx prisma generate && (npx prisma db push --accept-data-loss 2>/dev/null || true) && node dist/server/index.js"]
+
+[[deployment.env]]
+name = "NODE_ENV"
+value = "production"
+
+[[deployment.env]]
+name = "PORT"
+value = "4000"
+
+[[deployment.env]]
+name = "HOST"
+value = "0.0.0.0"

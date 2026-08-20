@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - Leaderboard Ad</title>
+  <!--
+    ============================================================
+    EDITABLE GOOGLE ADS BANNER - Leaderboard
+    Size: 728 x 90px
+    ============================================================
+  -->
+  <style>
+    @import url('../shared/brand-colors.css');
+
+    .poster {
+      width: 728px;
+      height: 90px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: 100px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-logo);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 18px; height: 18px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .divider {
+      width: 1px;
+      height: 36px;
+      background: var(--border);
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .headline .accent { color: var(--logo-start); }
+
+    .sub {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .features {
+      display: flex;
+      gap: 14px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+    }
+
+    .feature .check {
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      background: var(--gradient-logo);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="left">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 27 L68 43 L59 43 L59 73 L41 73 L41 43 L32 43 Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="text">
+        <!-- EDIT: Headline -->
+        <div class="headline">WhatsApp + AI + E-Commerce | <span class="accent">Start Free</span></div>
+        <!-- EDIT: Sub text -->
+        <div class="sub">All-in-one CRM for Indian businesses — ₹0/month plan available</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="features">
+        <!-- EDIT: Features -->
+        <div class="feature"><span class="check">✓</span> WhatsApp API</div>
+        <div class="feature"><span class="check">✓</span> AI CRM</div>
+        <div class="feature"><span class="check">✓</span> E-Store</div>
+      </div>
+      <!-- EDIT: CTA -->
+      <a href="#" class="cta">Try Free →</a>
+    </div>
+  </div>
+</body>
+</html>

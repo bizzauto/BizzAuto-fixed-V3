@@ -1,0 +1,17 @@
+{
+  "admin": {
+    "token": "admin_token_123456789",
+    "user_id": "user_admin",
+    "business_id": "biz_admin_123"
+  },
+  "agent": {
+    "token": "agent_token_abcdef789",
+    "user_id": "user_agent_456",
+    "business_id": "biz_agent_456"
+  },
+  "guest": {
+    "token": "guest_token_xyz123",
+    "user_id": "user_guest_789",
+    "business_id": null
+  }
+}

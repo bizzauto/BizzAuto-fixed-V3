@@ -1,0 +1,15 @@
+Prisma schema loaded from prisma\schema.prisma
+Error: Prisma schema validation - (get-dmmf wasm)
+Error code: P1012
+[1;91merror[0m: [1mError validating field `business` in model `Lead`: The relation field `business` on model `Lead` is missing an opposite relation field on the model `Business`. Either run `prisma format` or add it manually.[0m
+  [1;94m-->[0m  [4mprisma\schema.prisma:2746[0m
+[1;94m   | [0m
+[1;94m2745 | [0m  updatedAt DateTime @updatedAt
+[1;94m2746 | [0m  [1;91mbusiness  Business @relation(fields: [businessId], references: [id])[0m
+[1;94m2747 | [0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+[Context: getDmmf]
+
+Prisma CLI Version : 5.22.0

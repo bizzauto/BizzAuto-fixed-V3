@@ -1,0 +1,188 @@
+# ==============================================
+# BizzAuto CRM - Prometheus Alerting Rules
+# ==============================================
+# Alert thresholds tuned for 100,000+ business scale
+# Notifies via Alertmanager (configured separately)
+
+groups:
+  - name: bizzauto-backend
+    interval: 30s
+    rules:
+      # ---- Uptime & Availability ----
+      - alert: InstanceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "Instance {{ $labels.instance }} is down"
+          description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minute."
+          runbook_url: "https://bizzautoai.com/docs/runbooks/instance-down"
+
+      # ---- API Health ----
+      - alert: HealthCheckFailed
+        expr: probe_success{job="bizzauto-backend"} == 0
+        for: 30s
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "Backend health check failed"
+          description: "App backend at {{ $labels.instance }} health check failing for 30s+"
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "High HTTP 5xx error rate ({{ $value | humanizePercentage }})"
+          description: "Error rate exceeds 5% for 5 minutes on {{ $labels.instance }}"
+
+      - alert: High4xxRate
+        expr: rate(http_requests_total{status=~"4.."}[5m]) / rate(http_requests_total[5m]) > 0.20
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "High HTTP 4xx error rate ({{ $value | humanizePercentage }})"
+          description: "4xx rate exceeds 20% — possible client abuse or broken integration"
+
+      - alert: SlowResponses
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 3
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "P95 response time > 3s"
+          description: "95th percentile response time is {{ $value }}s on {{ $labels.instance }}"
+
+      # ---- Database ----
+      - alert: PostgresDown
+        expr: pg_up == 0
+        for: 30s
+        labels:
+          severity: critical
+          team: database
+        annotations:
+          summary: "PostgreSQL is down"
+          description: "Database instance {{ $labels.instance }} is unreachable"
+
+      - alert: PostgresHighConnections
+        expr: pg_stat_activity_count > 150
+        for: 2m
+        labels:
+          severity: warning
+          team: database
+        annotations:
+          summary: "PostgreSQL high connection count ({{ $value }})"
+          description: "Active connections exceed 150 — consider PgBouncer or increasing max_connections"
+
+      - alert: PostgresSlowQueries
+        expr: rate(pg_stat_activity_max_tx_duration_seconds[1m]) > 2
+        for: 5m
+        labels:
+          severity: warning
+          team: database
+        annotations:
+          summary: "PostgreSQL slow queries detected"
+          description: "Long-running transactions detected (>2s average)"
+
+      # ---- Redis ----
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 30s
+        labels:
+          severity: critical
+          team: infrastructure
+        annotations:
+          summary: "Redis is down"
+          description: "Redis instance {{ $labels.instance }} is unreachable"
+
+      - alert: RedisMemoryHigh
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "Redis memory > 85% ({{ $value | humanizePercentage }})"
+          description: "Redis memory usage at {{ $value | humanizePercentage }} — consider scaling up"
+
+      # ---- Queues (BullMQ) ----
+      - alert: QueueBacklogGrowing
+        expr: rate(bull_queue_waiting_count[10m]) > 0
+        for: 10m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "BullMQ queue backlog growing"
+          description: "Queue {{ $labels.queue }} has {{ $value }} waiting jobs accumulating"
+
+      - alert: QueueFailedJobs
+        expr: rate(bull_queue_failed_count[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "High BullMQ failed jobs rate"
+          description: "Queue {{ $labels.queue }} has {{ $value }} failed jobs per minute"
+
+      # ---- Resource Usage ----
+      - alert: HighCPUUsage
+        expr: rate(process_cpu_seconds_total[5m]) > 0.8
+        for: 10m
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "High CPU usage ({{ $value | humanizePercentage }})"
+          description: "CPU usage exceeding 80% for 10 minutes on {{ $labels.instance }}"
+
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "System memory > 90%"
+          description: "Memory usage at {{ $value | humanizePercentage }} — potential OOM risk"
+
+      - alert: DiskSpaceRunningOut
+        expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} < 0.10
+        for: 5m
+        labels:
+          severity: critical
+          team: infrastructure
+        annotations:
+          summary: "Disk space < 10% on {{ $labels.mountpoint }}"
+          description: "Only {{ $value | humanizePercentage }} disk space remaining"
+
+      # ---- SSL / Certificate ----
+      - alert: SSLCertExpiringSoon
+        expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 14
+        for: 1h
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "SSL certificate expiring in < 14 days"
+          description: "Certificate for {{ $labels.instance }} expires in {{ $value | humanizeDuration }}"
+
+      # ---- Backup ----
+      - alert: BackupNotRunning
+        expr: time() - backup_last_success_timestamp > 86400 * 2
+        for: 1h
+        labels:
+          severity: critical
+          team: infrastructure
+        annotations:
+          summary: "No successful backup in > 48 hours"
+          description: "Last successful backup was {{ $value | humanizeDuration }} ago"

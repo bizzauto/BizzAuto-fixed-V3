@@ -1,0 +1,15 @@
+                     <CheckCircle size={20} className="text-green-600" />
+                      <div className="text-left">
+                        <p className="text-sm font-medium text-green-800">Evolution API Configured</p>
+                        <p className="text-xs text-green-600">{evolutionConfig.baseUrl}</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={onEvolutionConnect}
+                      className="w-full px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-colors font-semibold shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2"
+                    >
+                      <QrCode size={20} />
+                      Connect & Get QR Code
+                    </button>
+                    <button
+                      onClick={() => setShowEvolutionFor

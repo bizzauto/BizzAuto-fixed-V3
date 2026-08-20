@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BizzAuto AI - Complete Features Guide / सभी Features की जानकारी</title>
+<style>
+  @page { margin: 1cm; size: A4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fff; }
+  .cover { page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #0d3b66, #1a7fb5); color: white; text-align: center; padding: 2rem; }
+  .cover h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+  .cover h2 { font-size: 1.5rem; font-weight: 400; opacity: 0.9; margin-bottom: 2rem; }
+  .cover .version { font-size: 1.1rem; opacity: 0.7; }
+  .toc { page-break-after: always; padding: 2rem; }
+  .toc h2 { font-size: 1.8rem; color: #0d3b66; margin-bottom: 1rem; border-bottom: 3px solid #0d3b66; padding-bottom: 0.5rem; }
+  .toc ul { list-style: none; }
+  .toc li { padding: 0.4rem 0; border-bottom: 1px dotted #ccc; font-size: 1.05rem; }
+  .toc li span.num { color: #0d3b66; font-weight: bold; margin-right: 0.5rem; }
+  .section { page-break-inside: avoid; margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 10px; background: #fafbff; }
+  .section h2 { font-size: 1.6rem; color: #0d3b66; margin-bottom: 0.3rem; border-bottom: 2px solid #4db8d9; padding-bottom: 0.5rem; }
+  .section h3 { font-size: 1.1rem; color: #1a7fb5; margin: 0.8rem 0 0.3rem; }
+  .section .hi { color: #555; font-size: 0.95rem; margin-bottom: 0.8rem; font-style: italic; }
+  .section ul { margin-left: 1.5rem; margin-bottom: 0.5rem; }
+  .section li { margin-bottom: 0.3rem; }
+  .section .feature-box { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+  .section .feature-box h4 { color: #0d3b66; margin-bottom: 0.3rem; }
+  .section .tag { display: inline-block; background: #e8f4fd; color: #0d3b66; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin: 2px; }
+  .section .route { font-family: monospace; background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+  th { background: #0d3b66; color: white; }
+  tr:nth-child(even) { background: #f5f5f5; }
+  .footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; border-top: 2px solid #0d3b66; margin-top: 2rem; }
+  @media print { .section { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>BizzAuto AI</h1>
+  <h2>Complete Features Guide<br>सभी Features की विस्तृत जानकारी</h2>
+  <p class="version">Version 12.0.1 | June 2026</p>
+  <p style="margin-top:2rem; opacity:0.8;">Hindi + English (द्विभाषी)</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Table of Contents / विषय सूची</h2>
+  <ul>
+    <li><span class="num">1.</span> Authentication & Onboarding / लॉगिन और रजिस्ट्रेशन</li>
+    <li><span class="num">2.</span> Dashboard & Analytics / डैशबोर्ड और एनालिटिक्स</li>
+    <li><span class="num">3.</span> WhatsApp Messaging / व्हाट्सऐप मैसेजिंग</li>
+    <li><span class="num">4.</span> CRM & Lead Management / CRM और लीड मैनेजमेंट</li>
+    <li><span class="num">5.</span> Appointments & Scheduling / अपॉइंटमेंट और शेड्यूलिंग</li>
+    <li><span class="num">6.</span> E-Commerce / ई-कॉमर्स</li>
+    <li><span class="num">7.</span> Documents & Invoicing / दस्तावेज़ और इनवॉइस</li>
+    <li><span class="num">8.</span> Social Media Management / सोशल मीडिया मैनेजमेंट</li>
+    <li><span class="num">9.</span> Google Business Profile / गूगल बिज़नेस प्रोफाइल</li>
+    <li><span class="num">10.</span> AI & Automation / AI और ऑटोमेशन</li>
+    <li><span class="num">11.</span> Marketing & Campaigns / मार्केटिंग और कैंपेन</li>
+    <li><span class="num">12.</span> Reviews & Reputation / रिव्यू और रेपुटेशन</li>
+    <li><span class="num">13.</span> Surveys & Forms / सर्वे और फॉर्म</li>
+    <li><span class="num">14.</span> Content & Blogging / कंटेंट और ब्लॉग</li>
+    <li><span class="num">15.</span> Voice & Calls / वॉइस और कॉल्स</li>
+    <li><span class="num">16.</span> Payments & Billing / पेमेंट और बिलिंग</li>
+    <li><span class="num">17.</span> Team & Access Management / टीम और एक्सेस मैनेजमेंट</li>
+    <li><span class="num">18.</span> Security & Compliance / सिक्योरिटी और कम्प्लायंस</li>
+    <li><span class="num">19.</span> Settings & Configuration / सेटिंग्स और कॉन्फ़िगरेशन</li>
+    <li><span class="num">20.</span> Pricing Plans / प्राइसिंग प्लान</li>
+  </ul>
+</div>
+
+<!-- 1. AUTHENTICATION -->
+<div class="section">
+  <h2>1. Authentication & Onboarding</h2>
+  <p class="hi">लॉगिन, रजिस्ट्रेशन, और नए यूज़र को शुरू करने की प्रक्रिया</p>
+
+  <h3>1.1 Login Page</h3>
+  <p><strong>Route:</strong> <span class="route">/login</span></p>
+  <p><strong>English:</strong> Users can login with email + password. Also supports Google Sign-In and Apple Sign-In for one-click login. Demo mode available for quick testing.</p>
+  <p><strong>Hindi:</strong> यूज़र ईमेल + पासवर्ड से लॉगिन कर सकते हैं। Google और Apple से भी एक क्लिक में लॉगिन हो सकता है। डेमो मोड भी उपलब्ध है।</p>
+
+  <h3>1.2 Registration</h3>
+  <p><strong>Route:</strong> <span class="route">/register</span></p>
+  <p><strong>English:</strong> Multi-step registration form — business name, phone, email, password, business type, agree to terms. Creates business account with subscription plan.</p>
+  <p><strong>Hindi:</strong> मल्टी-स्टेप रजिस्ट्रेशन — बिज़नेस का नाम, फ़ोन, ईमेल, पासवर्ड, बिज़नेस का प्रकार, नियम स्वीकार करना। सब्सक्रिप्शन प्लान के साथ अकाउंट बनता है।</p>
+
+  <h3>1.3 Forgot Password</h3>
+  <p><strong>Route:</strong> <span class="route">/forgot-password</span></p>
+  <p><strong>English:</strong> Password reset via email or OTP. User enters registered email, receives OTP, enters it, and sets new password.</p>
+  <p><strong>Hindi:</strong> ईमेल या OTP से पासवर्ड रीसेट। यूज़र ईमेल डालता है, OTP मिलता है, OTP डालकर नया पासवर्ड सेट करता है।</p>
+
+  <h3>1.4 Onboarding Wizard</h3>
+  <p><strong>Route:</strong> <span class="route">/onboarding</span></p>
+  <p><strong>English:</strong> Step-by-step setup wizard for new users. Quick auto-setup or manual setup. Connect WhatsApp (QR scan), Google Business, Razorpay payment. Guided tour of all features.</p>
+  <p><strong>Hindi:</strong> नए यूज़र के लिए स्टेप-बाय-स्टेप सेटअप विज़ार्ड। क्विक ऑटो-सेटअप या मैनुअल सेटअप। WhatsApp (QR स्कैन), Google Business, Razorpay कनेक्ट करें।</p>
+
+  <h3>1.5 Two-Factor Authentication (2FA)</h3>
+  <p><strong>English:</strong> TOTP-based two-factor authentication with backup codes for extra security. Works with Google Authenticator, Authy, etc.</p>
+  <p><strong>Hindi:</strong> TOTP-आधारित दो-फैक्टर ऑथेंटिकेशन बैकअप कोड्स के साथ। Google Authenticator, Authy आदि के साथ काम करता है।</p>
+</div>
+
+<!-- 2. DASHBOARD -->
+<div class="section">
+  <h2>2. Dashboard & Analytics</h2>
+  <p class="hi">डैशबोर्ड, रिपोर्ट्स, और बिज़नेस एनालिटिक्स</p>
+
+  <h3>2.1 Unified Dashboard</h3>
+  <p><strong>Route:</strong> <span class="route">/dashboard</span></p>
+  <p><strong>English:</strong> Three tabs — Overview, Reports, Sales. Shows real-time stats: revenue, active leads, messages sent, conversion rate, pipeline value, AI score. Charts for revenue trends, lead sources, campaign performance. AI-powered insights and recommendations.</p>
+  <p><strong>Hindi:</strong> तीन टैब — Overview, Reports, Sales। रियल-टाइम स्टैट्स: रेवेन्यू, एक्टिव लीड्स, मैसेज भेजे, कन्वर्ज़न रेट, पाइपलाइन वैल्यू, AI स्कोर। रेवेन्यू ट्रेंड, लीड सोर्स, कैंपेन परफॉर्मेंस के चार्ट। AI इनसाइट्स।</p>
+
+  <h3>2.2 Revenue Dashboard</h3>
+  <p><strong>Route:</strong> <span class="route">/revenue</span></p>
+  <p><strong>English:</strong> SaaS metrics — MRR (Monthly Recurring Revenue), ARR (Annual Recurring Revenue), churn rate, LTV (Lifetime Value), ARPU (Average Revenue Per User). Monthly revenue charts, top plan breakdown.</p>
+  <p><strong>Hindi:</strong> SaaS मेट्रिक्स — MRR (मासिक आवर्ती रेवेन्यू), ARR (वार्षिक आवर्ती रेवेन्यू), चर्न रेट, LTV (लाइफ़टाइम वैल्यू), ARPU (प्रति यूज़र औसत रेवेन्यू)।</p>
+
+  <h3>2.3 Reports</h3>
+  <p><strong>English:</strong> Detailed analytics reports with CSV export. ROI tracking by channel, sales funnel visualization, lead source distribution, payment method breakdown.</p>
+  <p><strong>Hindi:</strong> विस्तृत एनालिटिक्स रिपोर्ट्स CSV एक्सपोर्ट के साथ। चैनल-वाइज़ ROI ट्रैकिंग, सेल्स फ़नल, लीड सोर्स डिस्ट्रीब्यूशन।</p>
+</div>
+
+<!-- 3. WHATSAPP -->
+<div class="section">
+  <h2>3. WhatsApp Messaging</h2>
+  <p class="hi">व्हाट्सऐप बिज़नेस API इंटीग्रेशन — मैसेजिंग, ब्रॉडकास्ट, कैंपेन, चैटबॉट</p>
+
+  <h3>3.1 WhatsApp Connection</h3>
+  <p><strong>Route:</strong> <span class="route">/whatsapp</span></p>
+  <p><strong>English:</strong> Connect WhatsApp via QR code scan (Evolution API) or Meta Business API. Shows connection status, phone number, battery level. Supports multiple providers.</p>
+  <p><strong>Hindi:</strong> QR कोड स्कैन (Evolution API) या Meta Business API से WhatsApp कनेक्ट करें। कनेक्शन स्टेटस, फ़ोन नंबर, बैटरी लेवल दिखता है।</p>
+
+  <h3>3.2 Chat Interface</h3>
+  <p><strong>English:</strong> Full chat interface like WhatsApp Web. Conversation list with contact avatars, online status, last message preview. Send text, images, videos, documents, audio, templates, locations. Read receipts, starred messages, forwarding, labels (open/pending/closed).</p>
+  <p><strong>Hindi:</strong> WhatsApp Web जैसा पूरा चैट इंटरफ़ेस। कॉन्टैक्ट लिस्ट अवतार, ऑनलाइन स्टेटस, लास्ट मैसेज प्रीव्यू के साथ। टेक्स्ट, इमेज, वीडियो, डॉक्यूमेंट, ऑडियो, टेम्पलेट, लोकेशन भेजें।</p>
+
+  <h3>3.3 Broadcast</h3>
+  <p><strong>English:</strong> Send bulk WhatsApp messages to filtered contacts. Schedule broadcasts for later. Track delivery status, read status, responses.</p>
+  <p><strong>Hindi:</strong> फ़िल्टर किए गए कॉन्टैक्ट्स को बल्क मैसेज भेजें। बाद में भेजने के लिए शेड्यूल करें। डिलीवरी और रीड स्टेटस ट्रैक करें।</p>
+
+  <h3>3.4 Templates</h3>
+  <p><strong>English:</strong> Create and manage WhatsApp message templates. Add variables ({{name}}, {{order}}), buttons (quick reply, URL), headers, footers. Submit for Meta approval.</p>
+  <p><strong>Hindi:</strong> WhatsApp मैसेज टेम्पलेट बनाएं और मैनेज करें। वेरिएबल्स, बटन्स, हेडर, फ़ुटर जोड़ें। Meta अप्रूवल के लिए सबमिट करें।</p>
+
+  <h3>3.5 Campaigns</h3>
+  <p><strong>English:</strong> Create scheduled WhatsApp campaigns with target filters (tags, status, source). Track sent/delivered/read/opened/clicked stats. Campaign comparison.</p>
+  <p><strong>Hindi:</strong> टार्गेट फ़िल्टर्स (टैग्स, स्टेटस, सोर्स) के साथ शेड्यूल्ड कैंपेन बनाएं। भेजा/डिलीवर/पढ़ा/खोला/क्लिक स्टैट्स ट्रैक करें।</p>
+
+  <h3>3.6 Auto-Reply Chatbot</h3>
+  <p><strong>English:</strong> AI-powered auto-reply rules with keyword matching (exact, contains, startsWith). Business hours awareness. AI-generated responses using Claude/GPT. Drip campaigns.</p>
+  <p><strong>Hindi:</strong> AI-पावर्ड ऑटो-रिप्लाई रूल्स कीवर्ड मैचिंग के साथ (exact, contains, startsWith)। बिज़नेस आवर्स के अनुसार जवाब। AI-जनरेटेड रिस्पॉन्स।</p>
+</div>
+
+<!-- 4. CRM -->
+<div class="section">
+  <h2>4. CRM & Lead Management</h2>
+  <p class="hi">CRM, कॉन्टैक्ट्स, पाइपलाइन, डील्स, और लीड मैनेजमेंट</p>
+
+  <h3>4.1 CRM Page</h3>
+  <p><strong>Route:</strong> <span class="route">/crm</span></p>
+  <p><strong>English:</strong> Complete CRM with contacts, visual sales pipeline (drag-and-drop), deal tracking, activity timeline (calls, emails, meetings, notes, WhatsApp), task management, lead scoring (hot/warm/cold), source tracking, custom fields, invoicing.</p>
+  <p><strong>Hindi:</strong> पूरा CRM — कॉन्टैक्ट्स, विज़ुअल सेल्स पाइपलाइन (ड्रैग-एंड-ड्रॉप), डील ट्रैकिंग, एक्टिविटी टाइमलाइन (कॉल्स, ईमेल, मीटिंग्स, नोट्स, WhatsApp), टास्क मैनेजमेंट, लीड स्कोरिंग (गर्म/गुनगुना/ठंडा), सोर्स ट्रैकिंग, कस्टम फ़ील्ड्स, इनवॉइसिंग।</p>
+
+  <h3>4.2 Visual Pipeline</h3>
+  <p><strong>English:</strong> Drag-and-drop pipeline with stages (New, Contacted, Qualified, Proposal, Negotiation, Won, Lost). Visual feedback, drop zones, pipeline goals tracking. See deal values per stage.</p>
+  <p><strong>Hindi:</strong> ड्रैग-एंड-ड्रॉप पाइपलाइन स्टेजेज के साथ (नया, संपर्क किया, योग्य, प्रपोजल, बातचीत, जीता, हारा)। डील वैल्यू प्रति स्टेज देखें।</p>
+
+  <h3>4.3 Lead Generation</h3>
+  <p><strong>Route:</strong> <span class="route">/leads</span></p>
+  <p><strong>English:</strong> Lead capture from multiple sources (IndiaMART, JustDial, Facebook, Instagram, WhatsApp, website, Google Ads, referral, manual). Lead status pipeline. Bulk add. Multi-channel reply (WhatsApp/email/SMS). CSV export. Analytics by source and status.</p>
+  <p><strong>Hindi:</strong> अलग-अलग सोर्स से लीड कैप्चर (IndiaMART, JustDial, Facebook, Instagram, WhatsApp, वेबसाइट, Google Ads, रेफरल, मैनुअल)। बल्क ऐड। मल्टी-चैनल रिप्लाई। CSV एक्सपोर्ट।</p>
+
+  <h3>4.4 Import Leads</h3>
+  <p><strong>Route:</strong> <span class="route">/import-leads</span></p>
+  <p><strong>English:</strong> Import leads from email content, text paste, or CSV files. Auto-parse IndiaMART/JustDial emails. Bulk paste support.</p>
+  <p><strong>Hindi:</strong> ईमेल कंटेंट, टेक्स्ट पेस्ट, या CSV फ़ाइलों से लीड इम्पोर्ट करें। IndiaMART/JustDial ईमेल ऑटो-पार्स।</p>
+
+  <h3>4.5 Customer Journey</h3>
+  <p><strong>Route:</strong> <span class="route">/customer-journey</span></p>
+  <p><strong>English:</strong> Visual journey mapping: website visit → page view → add to cart → checkout → payment → purchase. Touchpoint analytics across channels. Conversion/drop-off rates per stage.</p>
+  <p><strong>Hindi:</strong> विज़ुअल जर्नी मैपिंग: वेबसाइट विज़िट → पेज व्यू → कार्ट → चेकआउट → पेमेंट → खरीदारी। हर स्टेज पर कन्वर्ज़न रेट।</p>
+</div>
+
+<!-- 5. APPOINTMENTS -->
+<div class="section">
+  <h2>5. Appointments & Scheduling</h2>
+  <p class="hi">अपॉइंटमेंट बुकिंग, कैलेंडर, और शेड्यूलिंग</p>
+
+  <h3>5.1 Calendar View</h3>
+  <p><strong>Route:</strong> <span class="route">/appointments</span></p>
+  <p><strong>English:</strong> Calendar with month/week/day views. Appointment types (call, meeting, demo, follow-up, consultation, service). Service catalog with pricing. Availability slots. Recurring appointments.</p>
+  <p><strong>Hindi:</strong> महीना/हफ़्ता/दिन व्यू कैलेंडर। अपॉइंटमेंट प्रकार (कॉल, मीटिंग, डेमो, फ़ॉलो-अप, कंसल्टेशन, सर्विस)। सर्विस कैटलॉग प्राइस के साथ। रिकरिंग अपॉइंटमेंट।</p>
+
+  <h3>5.2 Reminders</h3>
+  <p><strong>English:</strong> Automatic WhatsApp/email/SMS reminders before appointments. Configurable reminder times (1 hour, 1 day, etc.).</p>
+  <p><strong>Hindi:</strong> अपॉइंटमेंट से पहले ऑटोमैटिक WhatsApp/ईमेल/SMS रिमाइंडर। कॉन्फ़िगर करने योग्य रिमाइंडर टाइम।</p>
+
+  <h3>5.3 Booking Widget</h3>
+  <p><strong>Route:</strong> <span class="route">/appointment-booking</span></p>
+  <p><strong>English:</strong> Embeddable booking widget for external websites. Configure appointment types, duration, price. Generate embed code for website.</p>
+  <p><strong>Hindi:</strong> बाहरी वेबसाइट्स के लिए एम्बेड करने योग्य बुकिंग विजेट। अपॉइंटमेंट प्रकार, अवधि, कीमत कॉन्फ़िगर करें।</p>
+</div>
+
+<!-- 6. E-COMMERCE -->
+<div class="section">
+  <h2>6. E-Commerce</h2>
+  <p class="hi">ऑनलाइन स्टोर, प्रोडक्ट्स, ऑर्डर्स, पेमेंट</p>
+
+  <h3>6.1 Product Management</h3>
+  <p><strong>Route:</strong> <span class="route">/ecommerce</span></p>
+  <p><strong>English:</strong> Full product catalog — create/edit/delete products with variants, multiple images, categories, SKU tracking. Inventory management with low-stock alerts. Coupon system (percentage/fixed, min order, max uses, expiry). Order management with status tracking.</p>
+  <p><strong>Hindi:</strong> पूरा प्रोडक्ट कैटलॉग — वेरिएंट्स, कई इमेज, कैटेगरी, SKU ट्रैकिंग के साथ प्रोडक्ट बनाएं/एडिट करें। इन्वेंटरी मैनेजमेंट लो-स्टॉक अलर्ट के साथ। कूपन सिस्टम। ऑर्डर मैनेजमेंट।</p>
+
+  <h3>6.2 Public Storefront</h3>
+  <p><strong>Route:</strong> <span class="route">/store</span></p>
+  <p><strong>English:</strong> Customer-facing online store with product browsing, search, category filter, product zoom/gallery, shopping cart, coupon application, variant selection, wishlist.</p>
+  <p><strong>Hindi:</strong> ग्राहकों के लिए ऑनलाइन स्टोर — प्रोडक्ट ब्राउज़िंग, सर्च, कैटेगरी फ़िल्टर, ज़ूम/गैलरी, कार्ट, कूपन, विशलिस्ट।</p>
+
+  <h3>6.3 Checkout & Payments</h3>
+  <p><strong>Route:</strong> <span class="route">/checkout</span></p>
+  <p><strong>English:</strong> Multi-step checkout — shipping address, payment method selection (UPI, card, netbanking, wallet, COD), order summary, Razorpay integration.</p>
+  <p><strong>Hindi:</strong> मल्टी-स्टेप चेकआउट — शिपिंग एड्रेस, पेमेंट मेथड (UPI, कार्ड, नेटबैंकिंग, वॉलेट, COD), ऑर्डर समरी, Razorpay इंटीग्रेशन।</p>
+
+  <h3>6.4 Order Tracking</h3>
+  <p><strong>Route:</strong> <span class="route">/order-tracking</span></p>
+  <p><strong>English:</strong> Visual order status tracking (pending → processing → shipped → delivered). Order details, tracking by order number.</p>
+  <p><strong>Hindi:</strong> विज़ुअल ऑर्डर स्टेटस ट्रैकिंग (पेंडिंग → प्रोसेसिंग → शिप्ड → डिलीवर्ड)। ऑर्डर नंबर से ट्रैक करें।</p>
+
+  <h3>6.5 Inventory</h3>
+  <p><strong>Route:</strong> <span class="route">/inventory</span></p>
+  <p><strong>English:</strong> Stock level monitoring, SKU tracking, low-stock alerts, stock status (in-stock/low-stock/out-of-stock), CSV export, price and cost tracking.</p>
+  <p><strong>Hindi:</strong> स्टॉक लेवल मॉनिटरिंग, SKU ट्रैकिंग, लो-स्टॉक अलर्ट, CSV एक्सपोर्ट, प्राइस और कॉस्ट ट्रैकिंग।</p>
+</div>
+
+<!-- 7. DOCUMENTS -->
+<div class="section">
+  <h2>7. Documents & Invoicing</h2>
+  <p class="hi">कोटेशन, इनवॉइस, प्रपोजल — बनाएं, भेजें, ट्रैक करें</p>
+
+  <h3>7.1 Document Management</h3>
+  <p><strong>Route:</strong> <span class="route">/documents</span></p>
+  <p><strong>English:</strong> Create quotes, invoices, and proposals. Add line items with quantities and rates. Status tracking (draft → sent → viewed → accepted → paid → expired → declined). PDF generation. Send via WhatsApp/email. Document templates.</p>
+  <p><strong>Hindi:</strong> कोटेशन, इनवॉइस, प्रपोजल बनाएं। लाइन आइटम्स जोड़ें। स्टेटस ट्रैकिंग (ड्राफ्ट → भेजा → देखा → स्वीकार → भुगतान → एक्सपायर)। PDF जनरेट करें। WhatsApp/ईमेल से भेजें।</p>
+</div>
+
+<!-- 8. SOCIAL MEDIA -->
+<div class="section">
+  <h2>8. Social Media Management</h2>
+  <p class="hi">फ़ेसबुक, इंस्टाग्राम, लिंक्डइन, ट्विटर, YouTube पोस्टिंग</p>
+
+  <h3>8.1 Social Media Page</h3>
+  <p><strong>Route:</strong> <span class="route">/social</span></p>
+  <p><strong>English:</strong> Create posts with media upload. Publish to multiple platforms (Facebook, Instagram, LinkedIn, Twitter/X, YouTube). Schedule with calendar view. Post status tracking (draft/scheduled/published/failed). Analytics per post (likes, comments, shares, reach).</p>
+  <p><strong>Hindi:</strong> मीडिया अपलोड के साथ पोस्ट बनाएं। कई प्लेटफ़ॉर्म पर पब्लिश करें (Facebook, Instagram, LinkedIn, Twitter, YouTube)। कैलेंडर व्यू में शेड्यूल करें। पोस्ट एनालिटिक्स।</p>
+
+  <h3>8.2 Content Scheduler</h3>
+  <p><strong>Route:</strong> <span class="route">/content-scheduler</span></p>
+  <p><strong>English:</strong> AI-optimized posting times. Schedule content for best engagement. Platform selection, scheduled post management.</p>
+  <p><strong>Hindi:</strong> AI-ऑप्टिमाइज़्ड पोस्टिंग टाइम्स। बेस्ट एंगेजमेंट के लिए कंटेंट शेड्यूल करें।</p>
+</div>
+
+<!-- 9. GOOGLE BUSINESS -->
+<div class="section">
+  <h2>9. Google Business Profile</h2>
+  <p class="hi">गूगल बिज़नेस प्रोफाइल मैनेजमेंट — रिव्यू, पोस्ट, इनसाइट्स</p>
+
+  <h3>9.1 Profile Management</h3>
+  <p><strong>Route:</strong> <span class="route">/google-business</span></p>
+  <p><strong>English:</strong> Edit business profile (name, phone, website, description). View and reply to Google reviews (with AI-generated replies). Create business posts. View insights/analytics. Auto-post scheduling with configurable days, times, and templates. OAuth connection flow.</p>
+  <p><strong>Hindi:</strong> बिज़नेस प्रोफाइल एडिट करें (नाम, फ़ोन, वेबसाइट, डिस्क्रिप्शन)। Google रिव्यू देखें और AI-जनरेटेड रिप्लाई करें। बिज़नेस पोस्ट बनाएं। इनसाइट्स देखें। ऑटो-पोस्ट शेड्यूलिंग।</p>
+</div>
+
+<!-- 10. AI & AUTOMATION -->
+<div class="section">
+  <h2>10. AI & Automation</h2>
+  <p class="hi">AI चैटबॉट, असिस्टेंट, ऑटोमेशन, वर्कफ़्लो बिल्डर</p>
+
+  <h3>10.1 AI Chatbot</h3>
+  <p><strong>Route:</strong> <span class="route">/ai-chatbot</span></p>
+  <p><strong>English:</strong> AI-powered chatbot for business queries. Real-time chat interface, voice input/output. AI-generated responses for marketing, CRM, WhatsApp, poster design. Suggested prompts, message history.</p>
+  <p><strong>Hindi:</strong> बिज़नेस क्वेरीज़ के लिए AI चैटबॉट। रियल-टाइम चैट इंटरफ़ेस, वॉइस इनपुट/आउटपुट। मार्केटिंग, CRM, WhatsApp के लिए AI जवाब।</p>
+
+  <h3>10.2 Ava Executive Assistant</h3>
+  <p><strong>English:</strong> Floating AI assistant accessible from any page. Voice input in 6+ Indian languages. Business briefing (revenue, sales, leads, pipeline, appointments). Quick navigation commands. Metric alerts, recommendation engine.</p>
+  <p><strong>Hindi:</strong> किसी भी पेज से एक्सेस करने योग्य AI असिस्टेंट। 6+ भारतीय भाषाओं में वॉइस इनपुट। बिज़नेस ब्रीफिंग (रेवेन्यू, सेल्स, लीड्स, पाइपलाइन, अपॉइंटमेंट)।</p>
+
+  <h3>10.3 Jimi Assistant</h3>
+  <p><strong>English:</strong> Alternative AI assistant with personality modes (GF, Best Friend, Employee). Voice settings (pitch, speed, volume). Continuous listening. Multi-language support.</p>
+  <p><strong>Hindi:</strong> अलग AI असिस्टेंट पर्सनालिटी मोड्स के साथ (GF, बेस्ट फ्रेंड, एम्प्लॉई)। वॉइस सेटिंग्स। कंटिन्यूअस लिस्निंग।</p>
+
+  <h3>10.4 AI Sales Assistant</h3>
+  <p><strong>Route:</strong> <span class="route">/ai-sales-assistant</span></p>
+  <p><strong>English:</strong> AI-driven sales intelligence. Sales insights (opportunities, warnings, tips, trends). Hot lead scoring. Revenue forecasting with confidence scores. Recommended next actions.</p>
+  <p><strong>Hindi:</strong> AI-ड्रिवन सेल्स इंटेलिजेंस। सेल्स इनसाइट्स (अवसर, चेतावनी, टिप्स, ट्रेंड्स)। हॉट लीड स्कोरिंग। रेवेन्यू फ़ोरकास्टिंग।</p>
+
+  <h3>10.5 Automation Rules</h3>
+  <p><strong>Route:</strong> <span class="route">/automation</span></p>
+  <p><strong>English:</strong> 8 pre-built automation templates: WhatsApp Auto-Reply, Lead Auto-Capture, Review Responder, Drip Campaign, Appointment Reminder, Order Status Update, Payment Reminder, Feedback Collection. Rule activation/deactivation.</p>
+  <p><strong>Hindi:</strong> 8 प्री-बिल्ट ऑटोमेशन टेम्पलेट: WhatsApp ऑटो-रिप्लाई, लीड ऑटो-कैप्चर, रिव्यू रिस्पॉन्डर, ड्रिप कैंपेन, अपॉइंटमेंट रिमाइंडर, ऑर्डर स्टेटस, पेमेंट रिमाइंडर, फीडबैक कलेक्शन।</p>
+
+  <h3>10.6 Workflow Builder</h3>
+  <p><strong>Route:</strong> <span class="route">/workflows</span></p>
+  <p><strong>English:</strong> Visual drag-and-drop workflow builder (ReactFlow). Triggers: message received, lead created, form submitted, tag added, deal stage changed. Actions: send message, send email, add tag, create task, AI generate, delay, HTTP request, webhook. Condition nodes (if/else). AI nodes.</p>
+  <p><strong>Hindi:</strong> विज़ुअल ड्रैग-एंड-ड्रॉप वर्कफ़्लो बिल्डर। ट्रिगर्स: मैसेज मिला, लीड बनी, फॉर्म सबमिट। एक्शन्स: मैसेज भेजें, ईमेल भेजें, टैग जोड़ें, टास्क बनाएं, AI जनरेट। कंडीशन नोड्स (if/else)।</p>
+
+  <h3>10.7 Trigger Links</h3>
+  <p><strong>Route:</strong> <span class="route">/trigger-links</span></p>
+  <p><strong>English:</strong> Smart short links that trigger automations. URL shortening, QR code generation, click analytics (timeline, devices, browsers, countries, referrers).</p>
+  <p><strong>Hindi:</strong> स्मार्ट शॉर्ट लिंक्स जो ऑटोमेशन ट्रिगर करते हैं। URL शॉर्टनिंग, QR कोड, क्लिक एनालिटिक्स।</p>
+</div>
+
+<!-- 11. MARKETING -->
+<div class="section">
+  <h2>11. Marketing & Campaigns</h2>
+  <p class="hi">ईमेल मार्केटिंग, SMS, Google Ads, Facebook Leads, कैंपेन ROI</p>
+
+  <h3>11.1 Email Marketing</h3>
+  <p><strong>Route:</strong> <span class="route">/email-marketing</span></p>
+  <p><strong>English:</strong> Full email marketing platform. Block-based template builder (header, text, image, button, divider, footer, social). Campaign creation, audience segmentation, scheduling. Analytics (sent, delivered, opened, clicked, bounced). A/B testing support.</p>
+  <p><strong>Hindi:</strong> पूरा ईमेल मार्केटिंग प्लेटफ़ॉर्म। ब्लॉक-बेस्ड टेम्पलेट बिल्डर। कैंपेन क्रिएशन, ऑडियंस सेगमेंटेशन, शेड्यूलिंग। एनालिटिक्स (भेजा, डिलीवर, खोला, क्लिक, बाउंस)। A/B टेस्टिंग।</p>
+
+  <h3>11.2 Campaign ROI</h3>
+  <p><strong>Route:</strong> <span class="route">/campaign-roi</span></p>
+  <p><strong>English:</strong> Campaign performance calculator. Budget/spend tracking, impression/click/conversion metrics. ROI/CPC/CPA/CTR/ROAS calculations. Campaign comparison. CSV export.</p>
+  <p><strong>Hindi:</strong> कैंपेन परफॉर्मेंस कैलकुलेटर। बजट/खर्च ट्रैकिंग, ROI/CPC/CPA/CTR/ROAS कैलकुलेशन। कैंपेन कंपैरिज़न।</p>
+
+  <h3>11.3 Google Ads</h3>
+  <p><strong>Route:</strong> <span class="route">/google-ads</span></p>
+  <p><strong>English:</strong> Google Ads campaign management. Account connection, campaign listing with status, budget/spend tracking, impression/click/conversion metrics, CPC analysis.</p>
+  <p><strong>Hindi:</strong> Google Ads कैंपेन मैनेजमेंट। अकाउंट कनेक्शन, बजट ट्रैकिंग, इम्प्रेशन/क्लिक/कन्वर्ज़न मेट्रिक्स।</p>
+
+  <h3>11.4 Facebook Lead Ads</h3>
+  <p><strong>Route:</strong> <span class="route">/facebook-leads</span></p>
+  <p><strong>English:</strong> Facebook Lead Ads integration. Account connection, lead form sync, real-time lead import, form performance stats.</p>
+  <p><strong>Hindi:</strong> Facebook Lead Ads इंटीग्रेशन। अकाउंट कनेक्शन, लीड फॉर्म सिंक, रियल-टाइम लीड इम्पोर्ट।</p>
+
+  <h3>11.5 SMS Marketing</h3>
+  <p><strong>English:</strong> SMS campaign management. Campaign creation, target filtering, scheduled sending, delivery tracking, cost tracking.</p>
+  <p><strong>Hindi:</strong> SMS कैंपेन मैनेजमेंट। कैंपेन क्रिएशन, टार्गेट फ़िल्टरिंग, शेड्यूल्ड सेंडिंग, डिलीवरी ट्रैकिंग।</p>
+</div>
+
+<!-- 12. REVIEWS -->
+<div class="section">
+  <h2>12. Reviews & Reputation</h2>
+  <p class="hi">रिव्यू मैनेजमेंट, रेपुटेशन, रिव्यू रिक्वेस्ट</p>
+
+  <h3>13.1 Review Aggregation</h3>
+  <p><strong>Route:</strong> <span class="route">/reviews</span></p>
+  <p><strong>English:</strong> Reviews from Google, Facebook, WhatsApp in one place. Rating display, reply to reviews, filter by source/status (replied/unreplied).</p>
+  <p><strong>Hindi:</strong> Google, Facebook, WhatsApp के रिव्यू एक जगह। रेटिंग देखें, रिव्यू का जवाब दें, सोर्स/स्टेटस फ़िल्टर करें।</p>
+
+  <h3>13.2 Review Requests</h3>
+  <p><strong>Route:</strong> <span class="route">/review-requests</span></p>
+  <p><strong>English:</strong> Automated review request campaigns. Triggers: appointment completed, order delivered, manual. Multi-channel sending (WhatsApp, email, SMS). Review URL generation. Analytics dashboard.</p>
+  <p><strong>Hindi:</strong> ऑटोमैटिक रिव्यू रिक्वेस्ट कैंपेन। ट्रिगर्स: अपॉइंटमेंट पूरा, ऑर्डर डिलीवर, मैनुअल। मल्टी-चैनल सेंडिंग।</p>
+</div>
+
+<!-- 13. SURVEYS -->
+<div class="section">
+  <h2>13. Surveys & Forms</h2>
+  <p class="hi">सर्वे बिल्डर, फॉर्म बिल्डर, NPS, पोल, क्विज़</p>
+
+  <h3>14.1 Survey Builder</h3>
+  <p><strong>Route:</strong> <span class="route">/surveys</span></p>
+  <p><strong>English:</strong> 16 question types: text, email, phone, number, textarea, select, multi-select, radio, checkbox, rating, NPS, date, file, heading, paragraph, divider. Conditional logic. Survey types: form, survey, NPS, poll, quiz. Validation rules. Submission tracking, completion rate analytics, export responses.</p>
+  <p><strong>Hindi:</strong> 16 प्रश्न प्रकार: टेक्स्ट, ईमेल, फ़ोन, नंबर, textarea, select, multi-select, radio, checkbox, रेटिंग, NPS, डेट, फ़ाइल, हेडिंग, पैराग्राफ, डिवाइडर। कंडीशनल लॉजिक। सर्वे प्रकार: फॉर्म, सर्वे, NPS, पोल, क्विज़।</p>
+</div>
+
+<!-- 14. CONTENT -->
+<div class="section">
+  <h2>14. Content & Blogging</h2>
+  <p class="hi">ब्लॉग, AI क्रिएटिव स्टूडियो, पोस्टर जनरेटर</p>
+
+  <h3>14.1 Blog Manager</h3>
+  <p><strong>Route:</strong> <span class="route">/blog</span></p>
+  <p><strong>English:</strong> Rich text editor (bold, italic, lists, quotes, code, links, images). Post CRUD, categories, tags. Comment moderation (approve/reject/delete). Publish/unpublish. SEO metadata.</p>
+  <p><strong>Hindi:</strong> रिच टेक्स्ट एडिटर। पोस्ट बनाएं/एडिट करें, कैटेगरी, टैग्स। कमेंट मॉडरेशन। SEO मेटाडेटा।</p>
+
+  <h3>14.2 AI Creative Studio</h3>
+  <p><strong>Route:</strong> <span class="route">/creative</span></p>
+  <p><strong>English:</strong> AI-powered poster/image generator. Multiple templates, 10 color palettes, font selection, brand kit, sticker/element placement, QR code, export as image. Categories: Festival, Offer, Product, Seasonal.</p>
+  <p><strong>Hindi:</strong> AI-पावर्ड पोस्टर/इमेज जनरेटर। कई टेम्पलेट्स, 10 कलर पैलेट, फ़ॉन्ट सेलेक्शन, ब्रांड किट, QR कोड, इमेज एक्सपोर्ट। कैटेगरी: त्योहार, ऑफ़र, प्रोडक्ट, सीज़नल।</p>
+</div>
+
+<!-- 15. VOICE -->
+<div class="section">
+  <h2>15. Voice & Calls</h2>
+  <p class="hi">वॉइस कॉल, रिकॉर्डिंग, ट्रांसक्रिप्ट, वॉइस-टू-टेक्स्ट</p>
+
+  <h3>15.1 Voice Call System</h3>
+  <p><strong>Route:</strong> <span class="route">/voice-call</span></p>
+  <p><strong>English:</strong> Integrated VoIP calling. Incoming/outgoing calls, call recording, transcripts, call history (total/incoming/outgoing/missed), call analytics chart, dial pad, agent management. Twilio/Plivo/browser provider support.</p>
+  <p><strong>Hindi:</strong> इंटीग्रेटेड VoIP कॉलिंग। इनकमिंग/आउटगोइंग कॉल्स, रिकॉर्डिंग, ट्रांसक्रिप्ट, कॉल हिस्ट्री, डायल पैड, एजेंट मैनेजमेंट।</p>
+
+  <h3>15.2 Voice to Text</h3>
+  <p><strong>Route:</strong> <span class="route">/voice-to-text</span></p>
+  <p><strong>English:</strong> Speech-to-text transcription. Browser-based speech recognition (Hindi + English). Transcript editing, note saving, copy to clipboard.</p>
+  <p><strong>Hindi:</strong> स्पीच-टू-टेक्स्ट ट्रांसक्रिप्शन। ब्राउज़र-बेस्ड स्पीच रिकग्निशन (हिंदी + अंग्रेज़ी)।</p>
+</div>
+
+<!-- 16. PAYMENTS -->
+<div class="section">
+  <h2>16. Payments & Billing</h2>
+  <p class="hi">सब्सक्रिप्शन, बिलिंग, पेमेंट लिंक्स, वॉलेट</p>
+
+  <h3>16.1 Billing Page</h3>
+  <p><strong>Route:</strong> <span class="route">/billing</span></p>
+  <p><strong>English:</strong> Current plan display, upgrade/downgrade, invoice history, payment method management.</p>
+  <p><strong>Hindi:</strong> करंट प्लान देखें, अपग्रेड/डाउनग्रेड, इनवॉइस हिस्ट्री, पेमेंट मेथड मैनेजमेंट।</p>
+
+  <h3>16.2 Payment Links</h3>
+  <p><strong>Route:</strong> <span class="route">/payment-links</span></p>
+  <p><strong>English:</strong> Shareable payment collection links. Fixed/flexible/subscription amounts. QR code generation. Expiry settings. WhatsApp/email sharing. Transaction tracking, analytics.</p>
+  <p><strong>Hindi:</strong> शेयर करने योग्य पेमेंट लिंक्स। फ़िक्स/फ़्लेक्सिबल/सब्सक्रिप्शन अमाउंट। QR कोड। एक्सपायरी सेटिंग्स। WhatsApp/ईमेल शेयरिंग।</p>
+
+  <h3>16.3 Wallet System</h3>
+  <p><strong>English:</strong> Prepaid wallet for voice calls and SMS. Balance management, recharge via Razorpay, usage tracking, transaction history, low-balance alerts.</p>
+  <p><strong>Hindi:</strong> वॉइस कॉल्स और SMS के लिए प्रीपेड वॉलेट। बैलेंस मैनेजमेंट, Razorpay से रिचार्ज, यूसेज ट्रैकिंग।</p>
+</div>
+
+<!-- 17. TEAM -->
+<div class="section">
+  <h2>17. Team & Access Management</h2>
+  <p class="hi">टीम मैनेजमेंट, रोल्स, SSO, क्लाइंट पोर्टल</p>
+
+  <h3>17.1 Team Management</h3>
+  <p><strong>Route:</strong> <span class="route">/team</span></p>
+  <p><strong>English:</strong> Add/remove team members, role assignment (OWNER, ADMIN, MEMBER, VIEWER), invitation system, member activity tracking.</p>
+  <p><strong>Hindi:</strong> टीम मेंबर्स जोड़ें/हटाएं, रोल असाइन (OWNER, ADMIN, MEMBER, VIEWER), इन्विटेशन सिस्टम।</p>
+
+  <h3>17.2 Custom Roles</h3>
+  <p><strong>Route:</strong> <span class="route">/custom-roles</span></p>
+  <p><strong>English:</strong> Custom role creation with 15 permission categories (contacts, campaigns, invoices, team, settings, reports). Color coding, user assignment.</p>
+  <p><strong>Hindi:</strong> 15 परमिशन कैटेगरी के साथ कस्टम रोल बनाएं। कलर कोडिंग, यूज़र असाइनमेंट।</p>
+
+  <h3>17.3 Client Portal</h3>
+  <p><strong>Route:</strong> <span class="route">/client-portal</span></p>
+  <p><strong>English:</strong> Branded customer self-service portal. Access token generation, permission management (contacts, invoices, documents, appointments).</p>
+  <p><strong>Hindi:</strong> ब्रांडेड ग्राहक सेल्फ-सर्विस पोर्टल। एक्सेस टोकन जनरेशन, परमिशन मैनेजमेंट।</p>
+</div>
+
+<!-- 18. SECURITY -->
+<div class="section">
+  <h2>18. Security & Compliance</h2>
+  <p class="hi">सिक्योरिटी, ऑडिट लॉग, API कीज़, सपोर्ट टिकट</p>
+
+  <h3>18.1 Audit Log</h3>
+  <p><strong>Route:</strong> <span class="route">/audit-log</span></p>
+  <p><strong>English:</strong> Complete activity audit trail. Every action logged with timestamp, user, and details. Exportable.</p>
+  <p><strong>Hindi:</strong> पूरी एक्टिविटी ऑडिट ट्रेल। हर एक्शन टाइमस्टैम्प, यूज़र और डिटेल्स के साथ लॉग। एक्सपोर्ट करने योग्य।</p>
+
+  <h3>18.2 API Keys</h3>
+  <p><strong>Route:</strong> <span class="route">/api-keys</span></p>
+  <p><strong>English:</strong> API key management for integrations. Key creation, revocation, permission scoping.</p>
+  <p><strong>Hindi:</strong> इंटीग्रेशन के लिए API की मैनेजमेंट। की बनाएं, रिवोक करें, परमिशन स्कोप करें।</p>
+
+  <h3>18.3 Support Tickets</h3>
+  <p><strong>Route:</strong> <span class="route">/support-tickets</span></p>
+  <p><strong>English:</strong> Internal support ticket system. Priority levels (low/medium/high/urgent). Status workflow (open → in_progress → resolved → closed). Category filtering, internal notes, reply threading, attachments.</p>
+  <p><strong>Hindi:</strong> इंटरनल सपोर्ट टिकट सिस्टम। प्रायोरिटी लेवल्स (low/medium/high/urgent)। स्टेटस वर्कफ़्लो। कैटेगरी फ़िल्टरिंग, इंटरनल नोट्स, अटैचमेंट्स।</p>
+
+  <h3>18.4 SLA Management</h3>
+  <p><strong>Route:</strong> <span class="route">/sla-management</span></p>
+  <p><strong>English:</strong> Service Level Agreement tracking. Policy creation per channel (WhatsApp, email, phone). Response/resolution time targets. Compliance rate tracking, breach monitoring.</p>
+  <p><strong>Hindi:</strong> SLA ट्रैकिंग। हर चैनल के लिए पॉलिसी (WhatsApp, ईमेल, फ़ोन)। रिस्पॉन्स/रिज़ोल्यूशन टाइम टार्गेट। कम्प्लायंस रेट ट्रैकिंग।</p>
+</div>
+
+<!-- 19. SETTINGS -->
+<div class="section">
+  <h2>19. Settings & Configuration</h2>
+  <p class="hi">प्रोफ़ाइल, बिज़नेस सेटिंग्स, कस्टम फ़ील्ड्स, थीम, भाषा</p>
+
+  <h3>19.1 Profile Settings</h3>
+  <p><strong>Route:</strong> <span class="route">/profile</span></p>
+  <p><strong>English:</strong> User profile management — name, email, phone, avatar editing, password change, 2FA setup.</p>
+  <p><strong>Hindi:</strong> यूज़र प्रोफ़ाइल मैनेजमेंट — नाम, ईमेल, फ़ोन, अवतार एडिटिंग, पासवर्ड बदलें, 2FA सेटअप।</p>
+
+  <h3>19.2 Business Settings</h3>
+  <p><strong>Route:</strong> <span class="route">/settings</span></p>
+  <p><strong>English:</strong> Business info editing, branding/logo, timezone, notification preferences, social media connections.</p>
+  <p><strong>Hindi:</strong> बिज़नेस इन्फो एडिटिंग, ब्रांडिंग/लोगो, टाइमज़ोन, नोटिफ़िकेशन प्रेफ़रेंस, सोशल मीडिया कनेक्शन।</p>
+
+  <h3>19.3 Custom Fields</h3>
+  <p><strong>Route:</strong> <span class="route">/custom-fields</span></p>
+  <p><strong>English:</strong> Custom data field creation for CRM. Extend contact metadata with custom fields.</p>
+  <p><strong>Hindi:</strong> CRM के लिए कस्टम डेटा फ़ील्ड बनाएं। कॉन्टैक्ट मेटाडेटा को कस्टम फ़ील्ड्स से एक्सटेंड करें।</p>
+
+  <h3>19.4 Theme & Language</h3>
+  <p><strong>English:</strong> Dark/light mode toggle. 6 languages: English, Hindi, Marathi, Gujarati, Tamil, Telugu. AI mode toggle for futuristic UI.</p>
+  <p><strong>Hindi:</strong> डार्क/लाइट मोड। 6 भाषाएं: अंग्रेज़ी, हिंदी, मराठी, गुजराती, तमिल, तेलुगु। AI मोड टॉगल।</p>
+</div>
+
+<!-- 20. PRICING -->
+<div class="section">
+  <h2>20. Pricing Plans</h2>
+  <p class="hi">5 प्राइसिंग प्लान — फ्री से एजेंसी तक</p>
+
+  <table>
+    <tr>
+      <th>Plan</th>
+      <th>Price (Monthly)</th>
+      <th>Key Features</th>
+    </tr>
+    <tr>
+      <td><strong>Free</strong></td>
+      <td>₹0</td>
+      <td>Basic CRM, 100 contacts, 100 messages/month, basic chatbot</td>
+    </tr>
+    <tr>
+      <td><strong>Starter</strong></td>
+      <td>₹999</td>
+      <td>1,000 contacts, 1,000 messages, appointments, e-commerce basics</td>
+    </tr>
+    <tr>
+      <td><strong>Growth</strong></td>
+      <td>₹2,499</td>
+      <td>10,000 contacts, 5,000 messages, automation, email marketing, campaigns</td>
+    </tr>
+    <tr>
+      <td><strong>Pro</strong></td>
+      <td>₹4,999</td>
+      <td>Unlimited contacts, 20,000 messages, AI assistant, workflows, priority support</td>
+    </tr>
+    <tr>
+      <td><strong>Agency</strong></td>
+      <td>₹9,999</td>
+      <td>White-label, sub-accounts, API access, custom roles, SLA, dedicated support</td>
+    </tr>
+  </table>
+  <p><strong>Hindi:</strong> 5 प्राइसिंग प्लान — फ्री से ₹9,999/महीना तक। सभी प्लान 7-दिन का फ्री ट्रायल देते हैं।</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>BizzAuto AI</strong> | Complete Business Automation Platform</p>
+  <p>www.bizzautoai.com | support@bizzautoai.com</p>
+  <p>Version 12.0.1 | June 2026</p>
+  <p style="margin-top:1rem; font-size:0.8rem;">This document contains 20 major sections covering 100+ features of the BizzAuto AI platform.</p>
+</div>
+
+</body>
+</html>

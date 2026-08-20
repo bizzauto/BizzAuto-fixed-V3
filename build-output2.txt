@@ -1,0 +1,53 @@
+﻿
+> react-vite-tailwind@0.0.1 build
+> npx prisma generate && vite build && node scripts/build-server.js
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+
+Γ£ö Generated Prisma Client (v5.22.0) to .\node_modules\@prisma\client in 1.51s
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+[36mvite v7.3.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 1833 modules transformed.
+node.exe : [31mΓ£ù[39m Build failed in 5.85s
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31mΓ£ù[39m Build failed in 5.85s:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/HP/Desktop/1ST BEST WORKING VERSION VER/my-project-12.0.1/src/components/FunnelBuilder.tsx:221:11: ERROR: 
+Expected ")" but found "className"[31m
+file: [36mC:/Users/HP/Desktop/1ST BEST WORKING VERSION 
+VER/my-project-12.0.1/src/components/FunnelBuilder.tsx:221:11[31m
+[33m
+[33mExpected ")" but found "className"[33m
+219 |        </div>
+220 |  
+221 |        <div className="p-4 sm:p-5 md:p-6">
+    |             ^
+222 |          <div className="mb-4 relative">
+223 |            <Search size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+[31m
+    at failureErrorWithLog (C:\Users\HP\Desktop\1ST BEST WORKING VERSION 
+VER\my-project-12.0.1\node_modules\vite\node_modules\esbuild\lib\main.js:1748:15)
+    at C:\Users\HP\Desktop\1ST BEST WORKING VERSION 
+VER\my-project-12.0.1\node_modules\vite\node_modules\esbuild\lib\main.js:1017:50
+    at responseCallbacks.<computed> (C:\Users\HP\Desktop\1ST BEST WORKING VERSION 
+VER\my-project-12.0.1\node_modules\vite\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (C:\Users\HP\Desktop\1ST BEST WORKING VERSION 
+VER\my-project-12.0.1\node_modules\vite\node_modules\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout (C:\Users\HP\Desktop\1ST BEST WORKING VERSION 
+VER\my-project-12.0.1\node_modules\vite\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

@@ -1,0 +1,15 @@
+{evolutionConfig.configured ? (
+                  <div className="space-y-4">
+                    {connectionStatus === 'scanning' || connectionStatus === 'connecting' ? (
+                      <div className="text-center space-y-4">
+                        {qrValue ? (
+                          <div className="bg-white rounded-xl p-4 border-2 border-purple-300 inline-block mx-auto">
+                            {qrValue.startsWith('data:') || qrValue.startsWith('http') ? (
+                              <img
+                                src={qrValue}
+                                alt="WhatsApp QR Code"
+                                className="w-64 h-64 object-contain mx-auto rounded-lg"
+                              />
+                            ) : (
+                              <div className="w-64 h-64 mx-auto flex items-center justify-center bg-purple-50 rounded-lg">
+       

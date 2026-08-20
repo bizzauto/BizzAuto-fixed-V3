@@ -1,0 +1,12 @@
+const fs = require('fs');
+const path = '/app/dist/server/index.js';
+let c = fs.readFileSync(path, 'utf-8');
+const oldStr = '{ timeout: 1e4, stdio: "pipe" }';
+const newStr = '{ timeout: 2e4, stdio: "pipe" }';
+const count = (c.match(new RegExp(oldStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
+console.log('Found: ' + count);
+c = c.split(oldStr).join(newStr);
+fs.writeFileSync(path, c, 'utf-8');
+const v = fs.readFileSync(path, 'utf-8');
+console.log('Old remaining: ' + v.includes(oldStr));
+console.log('New applied: ' + v.includes(newStr));

@@ -1,0 +1,332 @@
+[
+  {
+    "name": "WhatsApp Auto-Reply with AI",
+    "nodes": [
+      {
+        "parameters": {},
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300],
+        "webhookId": "whatsapp-auto-reply",
+        "parameters": {
+          "path": "whatsapp-incoming",
+          "responseMode": "responseNode",
+          "options": {}
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{$json.body.entry[0].changes[0].value.messages[0].type}}",
+                "value2": "text"
+              }
+            ]
+          }
+        },
+        "name": "Check Message Type",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "prompt": "={{$json.body.entry[0].changes[0].value.messages[0].text.body}}",
+          "model": "google/gemma-2-9b-it:free",
+          "maxTokens": 200,
+          "options": {
+            "systemPrompt": "You are a helpful customer service assistant. Reply politely in maximum 2 sentences. If the message is a greeting, respond warmly. If it's a question, provide a helpful brief answer. Use emojis naturally."
+          }
+        },
+        "name": "AI Generate Reply",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 200],
+        "parameters": {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "method": "POST",
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "HTTP-Referer",
+                "value": "http://localhost:4000"
+              },
+              {
+                "name": "X-Title",
+                "value": "IndiaCRM Auto-Reply"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"model\": \"google/gemma-2-9b-it:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful customer service assistant. Reply politely in maximum 2 sentences.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"={{$json.body.entry[0].changes[0].value.messages[0].text.body}}\"\n    }\n  ],\n  \"max_tokens\": 200\n}"
+        }
+      },
+      {
+        "parameters": {
+          "url": "https://graph.facebook.com/v18.0/{{PHONE_NUMBER_ID}}/messages",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{WHATSAPP_ACCESS_TOKEN}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"={{$json.body.entry[0].changes[0].value.messages[0].from}}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"={{$json.choices[0].message.content}}\"\n  }\n}"
+        },
+        "name": "Send WhatsApp Reply",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [910, 200]
+      }
+    ],
+    "connections": {
+      "Webhook": {
+        "main": [
+          [
+            {
+              "node": "Check Message Type",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Check Message Type": {
+        "main": [
+          [
+            {
+              "node": "AI Generate Reply",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "AI Generate Reply": {
+        "main": [
+          [
+            {
+              "node": "Send WhatsApp Reply",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "saveExecutionProgress": true,
+      "saveManualExecutions": true,
+      "saveDataErrorExecution": "all",
+      "saveDataSuccessExecution": "all"
+    },
+    "tags": ["whatsapp", "auto-reply", "ai"]
+  },
+  {
+    "name": "Lead Auto-Capture from IndiaMART",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "indiamart-lead",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "IndiaMART Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300]
+      },
+      {
+        "parameters": {
+          "url": "http://app:4000/api/leads/indiamart",
+          "method": "POST",
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"name\": \"={{$json.name}}\",\n  \"phone\": \"={{$json.phone}}\",\n  \"email\": \"={{$json.email}}\",\n  \"product\": \"={{$json.product}}\",\n  \"requirement\": \"={{$json.requirement}}\",\n  \"businessId\": \"={{$json.businessId}}\"\n}"
+        },
+        "name": "Save to CRM",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "url": "https://graph.facebook.com/v18.0/{{PHONE_NUMBER_ID}}/messages",
+          "method": "POST",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{WHATSAPP_ACCESS_TOKEN}}"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"={{$json.phone}}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"Hello {{$json.name}}! 👋\\n\\nThank you for your inquiry about {{$json.product}}.\\n\\nWe'll get back to you shortly with all the details.\\n\\nBest regards,\\nYour Business Team\"\n  }\n}"
+        },
+        "name": "Send Welcome WhatsApp",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 300]
+      }
+    ],
+    "connections": {
+      "IndiaMART Webhook": {
+        "main": [
+          [
+            {
+              "node": "Save to CRM",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Save to CRM": {
+        "main": [
+          [
+            {
+              "node": "Send Welcome WhatsApp",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "tags": ["leads", "indiamart", "auto-reply"]
+  },
+  {
+    "name": "Google Review Auto-Reply",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "new-review",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "name": "Review Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [250, 300]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "number": [
+              {
+                "value1": "={{$json.rating}}",
+                "operation": "largerEqual",
+                "value2": 4
+              }
+            ]
+          }
+        },
+        "name": "Check Rating",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [470, 300]
+      },
+      {
+        "parameters": {
+          "prompt": "Write a thank you message for a {{$json.rating}}-star review. Keep it under 100 characters. Be warm and professional.",
+          "model": "google/gemma-2-9b-it:free"
+        },
+        "name": "AI Thank You",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 200]
+      },
+      {
+        "parameters": {
+          "prompt": "Write an apology and ask for a chance to improve. Keep it under 100 characters. Be professional and caring.",
+          "model": "google/gemma-2-9b-it:free"
+        },
+        "name": "AI Apology",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [690, 400]
+      },
+      {
+        "parameters": {
+          "url": "http://app:4000/api/reviews/reply",
+          "method": "POST",
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"reviewId\": \"={{$json.reviewId}}\",\n  \"reply\": \"={{$json.choices[0].message.content}}\"\n}"
+        },
+        "name": "Post Reply to Google",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [910, 300]
+      }
+    ],
+    "connections": {
+      "Review Webhook": {
+        "main": [
+          [
+            {
+              "node": "Check Rating",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Check Rating": {
+        "main": [
+          [
+            {
+              "node": "AI Thank You",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "AI Apology",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "AI Thank You": {
+        "main": [
+          [
+            {
+              "node": "Post Reply to Google",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "AI Apology": {
+        "main": [
+          [
+            {
+              "node": "Post Reply to Google",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "tags": ["reviews", "google", "auto-reply"]
+  }
+]

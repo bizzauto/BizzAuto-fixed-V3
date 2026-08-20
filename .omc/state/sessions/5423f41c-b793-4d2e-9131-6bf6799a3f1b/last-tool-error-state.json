@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"d:\\\\FIXED BEST\\\\BizzAuto-fixed-V3-main\\\" && echo \\\"=== package.json scripts (all) ===\\\" && grep -nE \\\"\\\\\\\"(test|jest|test:)\\\" package.json && echo \\\"=== __mocks__ for prisma in server...",
+  "error": "Exit code 2\n=== package.json scripts (all) ===\n121:    \"jest-environment-jsdom\": \"^30.4.1\",\n=== __mocks__ for prisma in server ===",
+  "timestamp": "2026-08-20T15:10:05.256Z",
+  "retry_count": 2
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - Automation Poster</title>
+  <!--
+    ============================================================
+    EDITABLE MARKETING POSTER - Automation & Workflows
+    Size: 1080 x 1350px (Instagram/Facebook Portrait)
+    ============================================================
+  -->
+  <style>
+    @import url('shared/brand-colors.css');
+    @import url('shared/base-styles.css');
+
+    .poster {
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: 200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      bottom: 200px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-logo);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(13, 148, 136, 0.4);
+    }
+
+    .logo-icon svg { width: 30px; height: 30px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .badge-auto {
+      padding: 8px 20px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 100px;
+      color: #22d3ee;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 100px;
+      color: #22d3ee;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .headline .gradient-text {
+      background: linear-gradient(135deg, #06b6d4, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    /* === WORKFLOW MOCKUP === */
+    .workflow-mockup {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .workflow-mockup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #06b6d4, var(--primary), var(--accent));
+    }
+
+    .workflow-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .workflow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .workflow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40px;
+      flex-shrink: 0;
+    }
+
+    .step-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .dot-trigger {
+      background: rgba(13, 148, 136, 0.2);
+      border: 2px solid rgba(13, 148, 136, 0.4);
+    }
+
+    .dot-condition {
+      background: rgba(245, 158, 11, 0.2);
+      border: 2px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .dot-action {
+      background: rgba(99, 102, 241, 0.2);
+      border: 2px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .dot-end {
+      background: rgba(34, 197, 94, 0.2);
+      border: 2px solid rgba(34, 197, 94, 0.4);
+    }
+
+    .step-connector {
+      width: 2px;
+      height: 24px;
+      background: var(--border);
+    }
+
+    .step-content {
+      flex: 1;
+      padding-bottom: 24px;
+    }
+
+    .step-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .step-tag {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .tag-green {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+    }
+
+    .tag-blue {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary-light);
+    }
+
+    .tag-orange {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+    }
+
+    /* === STATS === */
+    .stats-row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .stat-number.cyan { color: #22d3ee; }
+    .stat-number.purple { color: #a78bfa; }
+    .stat-number.green { color: #4ade80; }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #06b6d4, var(--primary));
+      color: white;
+      font-family: var(--font-primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.35);
+    }
+
+    .url {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .url span { color: var(--logo-start); }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="grid-bg"></div>
+
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 25 L70 45 L60 45 L60 75 L40 75 L40 45 L30 45 Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+      <div class="badge-auto">⚡ Automation</div>
+    </div>
+
+    <div class="content">
+      <div>
+        <div class="eyebrow">
+          <span>⚡</span>
+          Visual Workflow Builder
+        </div>
+
+        <h1 class="headline">
+          Automate Everything. <span class="gradient-text">Focus on Growth.</span>
+        </h1>
+
+        <p class="subheadline">
+          Build powerful workflows with drag-and-drop. Set triggers, conditions & actions — then watch your business run itself.
+        </p>
+      </div>
+
+      <!-- Workflow Mockup -->
+      <div class="workflow-mockup">
+        <div class="workflow-title">⚡ New Lead Welcome Workflow</div>
+        <div class="workflow-steps">
+          <!-- EDIT: Workflow steps -->
+          <div class="workflow-step">
+            <div class="step-line">
+              <div class="step-dot dot-trigger">📥</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <div class="step-label">Trigger</div>
+              <div class="step-title">New Lead Captured</div>
+              <div class="step-desc">From IndiaMART, Facebook Ads, or Web Form</div>
+              <div class="step-tag tag-green">Auto-detected</div>
+            </div>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-line">
+              <div class="step-dot dot-action">💬</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <div class="step-label">Action</div>
+              <div class="step-title">Send WhatsApp Welcome Message</div>
+              <div class="step-desc">Personalized message with catalog link</div>
+              <div class="step-tag tag-blue">Instant</div>
+            </div>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-line">
+              <div class="step-dot dot-condition">⏱️</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <div class="step-label">Wait</div>
+              <div class="step-title">Wait 2 Hours</div>
+              <div class="step-desc">Before checking engagement</div>
+            </div>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-line">
+              <div class="step-dot dot-condition">🔀</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <div class="step-label">Condition</div>
+              <div class="step-title">Did They Open Message?</div>
+              <div class="step-desc">Branch based on read status</div>
+              <div class="step-tag tag-orange">If/Else</div>
+            </div>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-line">
+              <div class="step-dot dot-end">✅</div>
+            </div>
+            <div class="step-content">
+              <div class="step-label">End</div>
+              <div class="step-title">Assign to Sales Team</div>
+              <div class="step-desc">Hot lead → Auto-assign to nearest agent</div>
+              <div class="step-tag tag-green">Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number cyan">50+</div>
+          <div class="stat-label">Ready-Made Templates</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number purple">24/7</div>
+          <div class="stat-label">Hands-Free Running</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number green">10X</div>
+          <div class="stat-label">Faster Follow-ups</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="#" class="cta-btn">See How It Works →</a>
+      <div class="url">bizz<span>auto</span>ai.com</div>
+    </div>
+  </div>
+</body>
+</html>

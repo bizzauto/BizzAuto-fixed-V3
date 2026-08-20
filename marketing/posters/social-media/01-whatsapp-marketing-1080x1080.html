@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - WhatsApp Marketing Poster</title>
+  <!--
+    ============================================================
+    EDITABLE MARKETING POSTER - WhatsApp Marketing
+    Size: 1080 x 1080px (Instagram/Facebook Square)
+    ============================================================
+    TO EDIT: Change text between EDIT markers below
+    TO EXPORT: Open in browser → Right-click → Screenshot
+    ============================================================
+  -->
+  <style>
+    @import url('shared/brand-colors.css');
+    @import url('shared/base-styles.css');
+
+    /* === POSTER CONTAINER === */
+    .poster {
+      width: 1080px;
+      height: 1080px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px;
+      font-family: var(--font-primary);
+    }
+
+    /* === BACKGROUND DECORATIONS === */
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* === HEADER === */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-logo);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(13, 148, 136, 0.4);
+    }
+
+    .logo-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .logo-name span {
+      color: var(--logo-start);
+    }
+
+    .badge-free {
+      padding: 8px 20px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 100px;
+      color: #4ade80;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* === MAIN CONTENT === */
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(236, 72, 153, 0.12);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+      border-radius: 100px;
+      color: var(--accent-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .headline .gradient-text {
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subheadline {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 550px;
+      margin-bottom: 40px;
+    }
+
+    /* === WHATSAPP MOCKUP === */
+    .whatsapp-mockup {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      max-width: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-mockup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-logo);
+    }
+
+    .whatsapp-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .whatsapp-header-icon {
+      width: 40px;
+      height: 40px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .whatsapp-header-text {
+      flex: 1;
+    }
+
+    .whatsapp-header-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-header-status {
+      font-size: 0.75rem;
+      color: #25D366;
+    }
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-msg {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: 85%;
+    }
+
+    .chat-msg-out {
+      background: #005c4b;
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-msg-in {
+      background: #1f2c33;
+      color: #e9edef;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-msg-time {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    /* === STATS ROW === */
+    .stats-row {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: var(--gradient-logo);
+      color: white;
+      font-family: var(--font-primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(13, 148, 136, 0.35);
+    }
+
+    .url {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .url span {
+      color: var(--logo-start);
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="grid-bg"></div>
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 25 L70 45 L60 45 L60 75 L40 75 L40 45 L30 45 Z" fill="white"/>
+          </svg>
+        </div>
+        <!-- EDIT: Brand name -->
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+      <!-- EDIT: Badge text -->
+      <div class="badge-free">FREE Plan Available</div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <!-- EDIT: Eyebrow text -->
+      <div class="eyebrow">
+        <span>💬</span>
+        WhatsApp Business API
+      </div>
+
+      <!-- EDIT: Headline -->
+      <h1 class="headline">
+        10X Your Sales with <span class="gradient-text">WhatsApp Automation</span>
+      </h1>
+
+      <!-- EDIT: Subheadline -->
+      <p class="subheadline">
+        Send bulk messages, build chatbots, manage conversations & close deals — all from one dashboard.
+      </p>
+
+      <!-- WhatsApp Chat Mockup -->
+      <div class="whatsapp-mockup">
+        <div class="whatsapp-header">
+          <div class="whatsapp-header-icon">💬</div>
+          <div class="whatsapp-header-text">
+            <!-- EDIT: Mock chat name -->
+            <div class="whatsapp-header-title">BizzAuto Store</div>
+            <div class="whatsapp-header-status">● online</div>
+          </div>
+        </div>
+        <div class="chat-messages">
+          <!-- EDIT: Chat messages -->
+          <div class="chat-msg chat-msg-in">
+            Hi! I'm interested in your products. Can you share the catalog?
+          </div>
+          <div class="chat-msg chat-msg-out">
+            Sure! Here's our latest catalog with 50% off on all items 🎉
+            <div class="chat-msg-time">10:32 AM ✓✓</div>
+          </div>
+          <div class="chat-msg chat-msg-in">
+            Amazing! How do I order?
+          </div>
+          <div class="chat-msg chat-msg-out">
+            Just reply with the item number and we'll process your order via UPI! 🚀
+            <div class="chat-msg-time">10:33 AM ✓✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <!-- EDIT: Stat numbers -->
+        <div class="stat-item">
+          <div class="stat-number">10X</div>
+          <div class="stat-label">Higher Response Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Message Delivery</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Chatbot Auto-Reply</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <!-- EDIT: CTA button text -->
+      <a href="#" class="cta-btn">
+        Start Free Trial →
+      </a>
+      <!-- EDIT: Website URL -->
+      <div class="url">bizz<span>auto</span>ai.com</div>
+    </div>
+  </div>
+</body>
+</html>

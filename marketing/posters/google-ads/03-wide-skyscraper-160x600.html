@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - Wide Skyscraper Ad</title>
+  <!--
+    ============================================================
+    EDITABLE GOOGLE ADS BANNER - Wide Skyscraper
+    Size: 160 x 600px
+    ============================================================
+  -->
+  <style>
+    @import url('../shared/brand-colors.css');
+
+    .poster {
+      width: 160px;
+      height: 600px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 14px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      bottom: 80px;
+      right: -30px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-icon {
+      width: 26px;
+      height: 26px;
+      background: var(--gradient-logo);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 14px; height: 14px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: 4px;
+      color: #25D366;
+      font-size: 0.55rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 900;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .headline .accent { color: var(--logo-start); }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      padding: 6px 8px;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .feature .check {
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .spacer { flex: 1; }
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: var(--gradient-logo);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .url {
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .url span { color: var(--logo-start); }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path d="M50 27 L68 43 L59 43 L59 73 L41 73 L41 43 L32 43 Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-name">Bizz<span>Auto</span></div>
+    </div>
+
+    <div class="badge">FREE Plan</div>
+
+    <!-- EDIT: Headline -->
+    <h1 class="headline">WhatsApp <span class="accent">Marketing</span> CRM</h1>
+
+    <div class="features">
+      <!-- EDIT: Features -->
+      <div class="feature"><span class="check">✓</span> Bulk WhatsApp</div>
+      <div class="feature"><span class="check">✓</span> AI Chatbot</div>
+      <div class="feature"><span class="check">✓</span> E-Commerce</div>
+      <div class="feature"><span class="check">✓</span> Lead CRM</div>
+      <div class="feature"><span class="check">✓</span> Automation</div>
+      <div class="feature"><span class="check">✓</span> Invoices</div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- EDIT: CTA -->
+    <a href="#" class="cta">Start Free →</a>
+    <div class="url">bizz<span>auto</span>ai.com</div>
+  </div>
+</body>
+</html>

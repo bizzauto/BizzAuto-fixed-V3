@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - Medium Rectangle Ad</title>
+  <!--
+    ============================================================
+    EDITABLE GOOGLE ADS BANNER - Medium Rectangle
+    Size: 300 x 250px
+    ============================================================
+  -->
+  <style>
+    @import url('../shared/brand-colors.css');
+
+    .poster {
+      width: 300px;
+      height: 250px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .top {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--gradient-logo);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 16px; height: 16px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: 4px;
+      color: #25D366;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .headline .accent {
+      color: var(--logo-start);
+    }
+
+    .sub {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 16px;
+      background: var(--gradient-logo);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .url {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+    }
+    .url span { color: var(--logo-start); }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="top">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 27 L68 43 L59 43 L59 73 L41 73 L41 43 L32 43 Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+      <!-- EDIT: Badge -->
+      <div class="badge">FREE Plan</div>
+      <!-- EDIT: Headline -->
+      <h1 class="headline">WhatsApp Marketing <span class="accent">CRM</span></h1>
+      <!-- EDIT: Sub text -->
+      <p class="sub">Bulk messaging, AI chatbot, e-commerce & automation — all in one app</p>
+    </div>
+    <div class="bottom">
+      <!-- EDIT: CTA -->
+      <a href="#" class="cta">Try Free →</a>
+      <div class="url">bizz<span>auto</span>ai.com</div>
+    </div>
+  </div>
+</body>
+</html>

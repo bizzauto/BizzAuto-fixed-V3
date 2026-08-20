@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizzAuto CRM - AI Features</title>
+  <!--
+    ============================================================
+    EDITABLE APP STORE SCREENSHOT - AI Features
+    Size: 1242 x 2688px (iPhone)
+    ============================================================
+  -->
+  <style>
+    @import url('../shared/brand-colors.css');
+    @import url('../shared/base-styles.css');
+
+    .poster {
+      width: 1242px;
+      height: 2688px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 100px 80px;
+      font-family: var(--font-primary);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 700px;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      bottom: 200px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-logo);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px rgba(13, 148, 136, 0.4);
+    }
+    .logo-icon svg { width: 46px; height: 46px; }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--text-primary);
+    }
+    .logo-name span { color: var(--logo-start); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 100px;
+      color: #a78bfa;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .headline {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .headline .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* === AI DEMO === */
+    .ai-demo {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ai-demo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .ai-demo-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .ai-avatar {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .ai-demo-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .ai-demo-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .ai-chat {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ai-msg {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .ai-msg-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .ai-msg-user {
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .ai-msg-bot {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .ai-msg-content {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+    }
+
+    .ai-msg-content p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .ai-msg-content strong {
+      color: var(--text-primary);
+    }
+
+    .ai-msg-content .highlight {
+      color: var(--logo-end);
+      font-weight: 600;
+    }
+
+    /* === AI FEATURES GRID === */
+    .ai-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ai-feature-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .ai-feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+    }
+
+    .ai-feature-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .ai-feature-card p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .bottom {
+      text-align: center;
+      margin-top: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 64px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-family: var(--font-primary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="grid-bg"></div>
+
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50 27 L68 43 L59 43 L59 73 L41 73 L41 43 L32 43 Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-name">Bizz<span>Auto</span></div>
+      </div>
+
+      <div class="eyebrow">🧠 AI-Powered</div>
+
+      <h1 class="headline">
+        Your AI <span class="gradient-text">Sales Assistant</span>
+      </h1>
+
+      <p class="subtitle">
+        Built-in AI that writes content, scores leads, suggests follow-ups & automates your marketing — like having a full team on autopilot.
+      </p>
+    </div>
+
+    <!-- AI Demo Chat -->
+    <div class="ai-demo">
+      <div class="ai-demo-header">
+        <div class="ai-avatar">✨</div>
+        <div>
+          <div class="ai-demo-title">BizzAuto AI Assistant</div>
+          <div class="ai-demo-subtitle">Powered by OpenRouter, Ollama & Replicate</div>
+        </div>
+      </div>
+      <div class="ai-chat">
+        <div class="ai-msg">
+          <div class="ai-msg-avatar ai-msg-user">👤</div>
+          <div class="ai-msg-content">
+            <p>Write a WhatsApp promotional message for our summer sale — 50% off on all electronics</p>
+          </div>
+        </div>
+        <div class="ai-msg">
+          <div class="ai-msg-avatar ai-msg-bot">✨</div>
+          <div class="ai-msg-content">
+            <p>
+              🌞 <strong>Summer Sale Alert!</strong> 🌞<br><br>
+              Hey <span class="highlight">{{name}}</span>!<br><br>
+              Beat the heat with our <strong>MEGA SUMMER SALE</strong> 🔥<br><br>
+              📱 Laptops starting ₹19,999<br>
+              🎧 Earbuds at ₹499<br>
+              ⌚ Smartwatches 50% OFF<br><br>
+              ⏰ Limited time — ends Sunday!<br>
+              🛒 Order now: <span class="highlight">{{catalog_link}}</span><br><br>
+              Pay via UPI & get free delivery 🚚
+            </p>
+          </div>
+        </div>
+        <div class="ai-msg">
+          <div class="ai-msg-avatar ai-msg-user">👤</div>
+          <div class="ai-msg-content">
+            <p>Now score my leads and tell me who's most likely to buy</p>
+          </div>
+        </div>
+        <div class="ai-msg">
+          <div class="ai-msg-avatar ai-msg-bot">✨</div>
+          <div class="ai-msg-content">
+            <p>
+              📊 <strong>Lead Scoring Results:</strong><br><br>
+              🔴 <span class="highlight">Rajesh Kumar</span> — Score: 94% (Hot)<br>
+              → Visited pricing page 3 times, opened last 5 messages<br><br>
+              🟠 <span class="highlight">Priya Patel</span> — Score: 78% (Warm)<br>
+              → Engaged with catalog, replied to WhatsApp<br><br>
+              🟡 <span class="highlight">Amit Singh</span> — Score: 52% (Nurture)<br>
+              → Subscribed but low engagement — send re-engagement campaign
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Features Grid -->
+    <div class="ai-features">
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">✍️</div>
+        <h4>Content Generator</h4>
+        <p>Write captions, hashtags, product descriptions & ad copy in seconds</p>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">📈</div>
+        <h4>Lead Scoring</h4>
+        <p>AI predicts which leads will convert — focus on the hottest prospects</p>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">💬</div>
+        <h4>Smart Chatbot</h4>
+        <p>Customizable AI chatbot with your business tone, language & knowledge</p>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">📅</div>
+        <h4>Content Calendar</h4>
+        <p>AI generates a complete content calendar for all your channels</p>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">🖼️</div>
+        <h4>AI Poster Generator</h4>
+        <p>Create marketing posters & creatives with AI — just describe what you want</p>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">⭐</div>
+        <h4>Review Replies</h4>
+        <p>AI drafts professional replies to customer reviews — positive & negative</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <a href="#" class="cta-btn">Try AI Features Free →</a>
+    </div>
+  </div>
+</body>
+</html>

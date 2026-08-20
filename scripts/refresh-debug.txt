@@ -1,0 +1,10 @@
+over:text-blue-700 mb-2"
+              >
+                <RefreshCw size={14} />
+                Refresh QR Code
+              </button>
+
+              {connectionStatus === 'disconnected' && (
+                <button
+                  onClick={onConnect}
+                  className="mt-2 p

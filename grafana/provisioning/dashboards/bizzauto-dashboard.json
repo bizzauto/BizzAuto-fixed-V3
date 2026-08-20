@@ -1,0 +1,16 @@
+{
+  "apiVersion": 1,
+  "providers": [
+    {
+      "name": "BizzAuto CRM",
+      "orgId": 1,
+      "folder": "BizzAuto Production",
+      "type": "file",
+      "disableDeletion": true,
+      "updateIntervalSeconds": 30,
+      "options": {
+        "path": "/etc/grafana/provisioning/dashboards/json"
+      }
+    }
+  ]
+}

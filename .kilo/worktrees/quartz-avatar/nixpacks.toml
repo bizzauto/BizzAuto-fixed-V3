@@ -1,0 +1,15 @@
+[phases.setup]
+
+[phases.install]
+cmd = "npm ci"
+
+[phases.build]
+cmd = "npx prisma generate && npx vite build && npx tsc -p tsconfig.server.json"
+
+[start]
+cmd = "npx prisma generate && npx prisma db push --accept-data-loss 2>/dev/null || true && node dist/server/index.js"
+
+[variables]
+NODE_ENV = "production"
+PORT = "4000"
+HOST = "0.0.0.0"
