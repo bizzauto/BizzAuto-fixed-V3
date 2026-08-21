@@ -6,16 +6,16 @@ ARG VITE_API_URL
 ENV NODE_ENV=development
 ENV VITE_GOOGLE_CLIENT_ID=${VITE_GOOGLE_CLIENT_ID}
 ENV VITE_API_URL=${VITE_API_URL}
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN apk add --no-cache openssl
 WORKDIR /app
 
 COPY package*.json ./
 COPY prisma ./prisma/
-RUN npm ci --no-audit --no-fund && npx prisma generate
+RUN npm ci --no-audit --no-fund --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000 --fetch-timeout=600000 && npx prisma generate
 
 COPY . .
 
-ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN rm -rf dist && npm run build:docker && find dist -name "*.map" -delete
 
 FROM node:22-alpine
@@ -28,7 +28,7 @@ WORKDIR /app
 
 COPY package*.json ./
 COPY prisma ./prisma/
-RUN npm ci --omit=dev --no-audit --no-fund && npx prisma generate && \
+RUN npm ci --omit=dev --no-audit --no-fund --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000 --fetch-timeout=600000 && npx prisma generate && \
     chown -R appuser:appgroup node_modules/.prisma && \
     npm cache clean --force && rm -rf /root/.npm
 
