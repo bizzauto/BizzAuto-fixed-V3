@@ -152,6 +152,7 @@ model Business {
   invoices               Invoice[]
   leadFinderSearches     LeadFinderSearch[]
   leadScores             LeadScore[]
+  leads                  Lead[]
   ledgerEntries          LedgerEntry[]
   liveChatSessions       LiveChatSession[]
   liveChatWidget         LiveChatWidget?
