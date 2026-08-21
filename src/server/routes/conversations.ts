@@ -1,8 +1,6 @@
 import { Router, Response } from 'express';
 import { prisma } from '../db.js';
 import { authenticate, AuthRequest } from '../middleware/auth.js';
-import axios from 'axios';
-import { decrypt } from '../utils/auth.js';
 
 const router = Router();
 
@@ -471,32 +469,18 @@ router.post('/:contactId/reply', authenticate, async (req: AuthRequest, res: Res
       return res.status(400).json({ success: false, error: 'Contact has no phone number' });
     }
 
-    const business = await prisma.business.findUnique({
-      where: { id: businessId },
-      select: { waPhoneNumberId: true, waAccessToken: true },
+    // WhatsApp reply — uses unified router (auto-detects Meta vs Evolution)
+    const { WhatsAppSendRouter } = await import('../services/whatsapp-send-router.service.js');
+    const result = await WhatsAppSendRouter.sendTextMessage(businessId, contact.phone, content, {
+      contactId,
     });
 
-    if (!business?.waPhoneNumberId || !business?.waAccessToken) {
-      return res.status(400).json({ success: false, error: 'WhatsApp not configured for this business' });
+    if (!result.success) {
+      return res.status(400).json({
+        success: false,
+        error: result.error || 'Failed to send WhatsApp message',
+      });
     }
-
-    const accessToken = decrypt(business.waAccessToken);
-
-    const response = await axios.post(
-      `https://graph.facebook.com/v18.0/${business.waPhoneNumberId}/messages`,
-      {
-        messaging_product: 'whatsapp',
-        to: contact.phone,
-        type: 'text',
-        text: { body: content },
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
 
     const message = await prisma.message.create({
       data: {
@@ -506,7 +490,7 @@ router.post('/:contactId/reply', authenticate, async (req: AuthRequest, res: Res
         type: 'text',
         content,
         status: 'sent',
-        waMessageId: response.data.messages?.[0]?.id,
+        waMessageId: result.messageId,
       },
     });
 

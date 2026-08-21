@@ -5,6 +5,16 @@ import { cacheResponse } from '../middleware/cache.js';
 
 const router = Router();
 
+// Platform / super-admin users have no businessId — short-circuit with safe empty data
+// to avoid Prisma crashes (required fields like Review.businessId reject `null`).
+// `authenticate` runs first so req.user is populated before the guard checks businessId.
+router.use(authenticate, (req: any, res: any, next: any) => {
+  if (!req.user?.businessId) {
+    return res.json({ success: true, data: {} });
+  }
+  next();
+});
+
 // Get dashboard analytics (for frontend dashboard)
 router.get('/dashboard', authenticate, cacheResponse(30), async (req: any, res: any) => {
   try {
@@ -30,7 +40,7 @@ router.get('/dashboard', authenticate, cacheResponse(30), async (req: any, res: 
       prisma.contact.count({ where: { businessId: req.user.businessId } }),
       prisma.message.count({
         where: {
-          contact: { businessId: req.user.businessId },
+          businessId: req.user.businessId,
           createdAt: { gte: startDate },
         },
       }),
@@ -60,7 +70,7 @@ router.get('/dashboard', authenticate, cacheResponse(30), async (req: any, res: 
       }),
       prisma.message.count({
         where: {
-          contact: { businessId: req.user.businessId },
+          businessId: req.user.businessId,
           createdAt: { gte: today },
         },
       }),
@@ -108,7 +118,7 @@ router.get('/dashboard', authenticate, cacheResponse(30), async (req: any, res: 
       const [dayMessages, dayPosts, dayLeads] = await Promise.all([
         prisma.message.count({
           where: {
-            contact: { businessId: req.user.businessId },
+            businessId: req.user.businessId,
             createdAt: { gte: dayStart, lte: dayEnd },
           },
         }),
@@ -203,7 +213,7 @@ router.get('/', authenticate, cacheResponse(60), async (req: any, res: any) => {
       prisma.contact.count({ where: { businessId: req.user.businessId } }),
       prisma.message.count({
         where: {
-          contact: { businessId: req.user.businessId },
+          businessId: req.user.businessId,
           createdAt: { gte: startDate },
         },
       }),
@@ -232,7 +242,7 @@ router.get('/', authenticate, cacheResponse(60), async (req: any, res: any) => {
       }),
       prisma.message.findMany({
         where: {
-          contact: { businessId: req.user.businessId },
+          businessId: req.user.businessId,
         },
         orderBy: { createdAt: 'desc' },
         take: 20,
@@ -249,7 +259,7 @@ router.get('/', authenticate, cacheResponse(60), async (req: any, res: any) => {
     const messageStats = await prisma.message.groupBy({
       by: ['status'],
       where: {
-        contact: { businessId: req.user.businessId },
+        businessId: req.user.businessId,
         createdAt: { gte: startDate },
       },
       _count: true,
@@ -345,15 +355,15 @@ router.get('/messages', authenticate, async (req: any, res: any) => {
     const businessId = req.user.businessId;
 
     const [total, sent, delivered, read, failed] = await Promise.all([
-      prisma.message.count({ where: { contact: { businessId }, createdAt: { gte: startDate } } }),
-      prisma.message.count({ where: { contact: { businessId }, createdAt: { gte: startDate }, status: 'sent' } }),
-      prisma.message.count({ where: { contact: { businessId }, createdAt: { gte: startDate }, status: 'delivered' } }),
-      prisma.message.count({ where: { contact: { businessId }, createdAt: { gte: startDate }, status: 'read' } }),
-      prisma.message.count({ where: { contact: { businessId }, createdAt: { gte: startDate }, status: 'failed' } }),
+      prisma.message.count({ where: { businessId, createdAt: { gte: startDate } } }),
+      prisma.message.count({ where: { businessId, createdAt: { gte: startDate }, status: 'sent' } }),
+      prisma.message.count({ where: { businessId, createdAt: { gte: startDate }, status: 'delivered' } }),
+      prisma.message.count({ where: { businessId, createdAt: { gte: startDate }, status: 'read' } }),
+      prisma.message.count({ where: { businessId, createdAt: { gte: startDate }, status: 'failed' } }),
     ]);
 
     const recentMessages = await prisma.message.findMany({
-      where: { contact: { businessId }, createdAt: { gte: startDate } },
+      where: { businessId, createdAt: { gte: startDate } },
       orderBy: { createdAt: 'desc' },
       take: 50,
       select: { id: true, content: true, direction: true, status: true, createdAt: true, contactId: true },
@@ -556,7 +566,7 @@ router.get('/funnel', authenticate, cacheResponse(60), async (req: any, res: any
       }),
       prisma.message.count({
         where: {
-          contact: { businessId: req.user.businessId },
+          businessId: req.user.businessId,
           createdAt: { gte: startDate },
         },
       }),

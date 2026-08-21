@@ -39,72 +39,33 @@ async function executeNode(
       if (!to) return { sent: false, error: 'No phone number' };
 
       try {
-        const business = await prisma.business.findUnique({ where: { id: ctx.businessId } });
-        const integration = await prisma.integration.findFirst({
-          where: { businessId: ctx.businessId, type: 'whatsapp_meta', isActive: true },
-        });
+        const { WhatsAppSendRouter } = await import('./whatsapp-send-router.service.js');
+        const result = await WhatsAppSendRouter.sendTextMessage(
+          ctx.businessId,
+          to.replace(/\D/g, ''),
+          message,
+          { messageId: contactId || undefined }
+        );
 
-        if (integration) {
-          const config = integration.config as any;
-          const phoneNumberId = config.phoneNumberId;
-          const accessToken = config.accessToken;
-
-          await axios.post(
-            `https://graph.facebook.com/v18.0/${phoneNumberId}/messages`,
-            {
-              messaging_product: 'whatsapp',
-              to: to.replace(/\D/g, ''),
-              type: 'text',
-              text: { body: message },
-            },
-            { headers: { Authorization: `Bearer ${accessToken}` } }
-          );
-
-          // Log message
-          await prisma.message.create({
-            data: {
-              businessId: ctx.businessId,
-              contactId: contactId || undefined,
-              direction: 'outbound',
-              type: 'text',
-              content: message,
-              status: 'sent',
-              metadata: { workflowId: ctx.workflowId, executionId: ctx.executionId, nodeType },
-            },
-          });
-
-          return { sent: true, to, message, channel: 'whatsapp_meta' };
+        if (!result.success) {
+          return { sent: false, error: result.error || 'Failed to send message' };
         }
 
-        // Try Evolution API
-        const evoIntegration = await prisma.integration.findFirst({
-          where: { businessId: ctx.businessId, type: 'evolution_api', isActive: true },
+        // Log message
+        await prisma.message.create({
+          data: {
+            businessId: ctx.businessId,
+            contactId: contactId || undefined,
+            direction: 'outbound',
+            type: 'text',
+            content: message,
+            status: 'sent',
+            waMessageId: result.messageId,
+            metadata: { workflowId: ctx.workflowId, executionId: ctx.executionId, nodeType },
+          },
         });
 
-        if (evoIntegration) {
-          const config = evoIntegration.config as any;
-          await axios.post(
-            `${config.baseUrl}/message/sendText/${config.instanceName}`,
-            { number: to.replace(/\D/g, ''), textMessage: { text: message } },
-            { headers: { apikey: config.apiKey } }
-          );
-
-          await prisma.message.create({
-            data: {
-              businessId: ctx.businessId,
-              contactId: contactId || undefined,
-              direction: 'outbound',
-              type: 'text',
-              content: message,
-              status: 'sent',
-              metadata: { workflowId: ctx.workflowId, executionId: ctx.executionId, nodeType },
-            },
-          });
-
-          return { sent: true, to, message, channel: 'evolution' };
-        }
-
-        return { sent: false, error: 'No WhatsApp provider configured' };
+        return { sent: true, to, message, channel: result.channel };
       } catch (err: any) {
         console.error(`[Workflow] WhatsApp send failed:`, err.message);
         return { sent: false, error: err.message };
