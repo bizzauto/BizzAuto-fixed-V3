@@ -2749,3 +2749,176 @@ model Lead {
   @@index([businessId])
   @@index([status])
 }
+
+// ===========================================================================
+// Models referenced by the application code but previously missing from the
+// schema. Each uses a plain scalar `businessId` (no Business back-relation)
+// because the code queries/filters by the scalar value only.
+// ===========================================================================
+
+model wl_resellers {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  password     String
+  company      String
+  phone        String?
+  plan         String   @default("STARTER")
+  domain       String
+  primaryColor String   @default("#6366f1")
+  logo         String?
+  revenue      Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model wl_clients {
+  id        String   @id @default(cuid())
+  resellerId String
+  name      String
+  email     String
+  phone     String   @default("")
+  product   String   @default("google-reviews")
+  plan      String   @default("STARTER")
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([resellerId])
+}
+
+model websites {
+  id        String   @id @default(cuid())
+  businessId String
+  name      String
+  slug      String
+  template  String   @default("business")
+  blocks    Json     @default("[]")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([businessId, slug])
+  @@index([businessId])
+}
+
+model landingPage {
+  id        String   @id @default(cuid())
+  businessId String
+  name      String
+  slug      String
+  blocks    Json     @default("[]")
+  content   Json?
+  html      String   @default("")
+  status    String   @default("DRAFT")
+  views     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model customRole {
+  id         String   @id @default(cuid())
+  businessId String
+  name       String
+  color      String
+  permissions Json    @default("[]")
+  isSystem   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model upload {
+  id           String   @id @default(cuid())
+  businessId   String
+  userId       String?
+  originalName String
+  fileName     String
+  mimeType     String
+  size         Int
+  path         String
+  url          String
+  category     String
+  entityType   String?
+  entityId     String?
+  width        Int?
+  height       Int?
+  thumbnailUrl String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model funnelPageView {
+  id        String   @id @default(cuid())
+  pageId    String
+  funnelId  String
+  businessId String
+  visitorId String?
+  ipAddress String?
+  userAgent String?
+  referer   String?
+  createdAt DateTime @default(now())
+
+  @@index([funnelId])
+  @@index([businessId])
+  @@index([pageId])
+}
+
+model crmInvoice {
+  id        String   @id @default(cuid())
+  businessId String
+  total     Float    @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model deal {
+  id        String   @id @default(cuid())
+  businessId String
+  stage     String?
+  value     Float    @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model messageLog {
+  id                String   @id @default(cuid())
+  businessId        String
+  channel           String
+  to                String?
+  body              String?
+  contactId         String?
+  providerMessageId String?
+  cost              Float?
+  success           Boolean?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model notificationPreference {
+  userId                String   @id
+  emailNotifications    Boolean  @default(true)
+  smsNotifications      Boolean  @default(false)
+  pushNotifications     Boolean  @default(true)
+  whatsappNotifications Boolean  @default(false)
+  newLeadAlert          Boolean  @default(true)
+  appointmentReminder   Boolean  @default(true)
+  campaignUpdate        Boolean  @default(true)
+  supportTicketUpdate   Boolean  @default(true)
+  weeklyReport          Boolean  @default(true)
+  monthlyReport         Boolean  @default(true)
+  securityAlerts        Boolean  @default(true)
+  marketingEmails       Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
